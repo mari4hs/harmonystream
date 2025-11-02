@@ -1,0 +1,228 @@
+{
+    "pt-BR": {
+        "nav": {
+            "home": "Início",
+            "artists": "Artistas",
+            "plans": "Planos",
+            "login": "Entrar"
+        },
+        "hero": {
+            "title": "Ouça suas artistas pop favoritas sem limites",
+            "subtitle": "Milhões de músicas. Zero anúncios. A experiência musical definitiva.",
+            "trial": "Começar teste grátis",
+            "plans": "Ver planos"
+        },
+        "artists": {
+            "title": "Artistas em Destaque",
+            "ariana": {
+                "name": "Ariana Grande",
+                "songs": "Positions • 7 rings • thank u, next",
+                "listeners": "85,4M ouvintes mensais",
+                "tags": [
+                    "Pop",
+                    "R&B"
+                ]
+            },
+            "sabrina": {
+                "name": "Sabrina Carpenter",
+                "songs": "Feather • Nonsense • Espresso",
+                "listeners": "75,4M ouvintes mensais",
+                "tags": [
+                    "Pop",
+                    "Dance"
+                ]
+            },
+            "nessa": {
+                "name": "Nessa Barrett",
+                "songs": "die first • madhouse • american jesus",
+                "listeners": "6,4M ouvintes mensais",
+                "tags": [
+                    "Pop Alternativo",
+                    "Emo"
+                ]
+            },
+            "taylor": {
+                "name": "Taylor Swift",
+                "songs": "Anti-Hero • Shake It Off • Blank Space",
+                "listeners": "111,3M ouvintes mensais",
+                "tags": [
+                    "Pop",
+                    "Country"
+                ]
+            }
+        },
+        "plans": {
+            "title": "Escolha seu plano",
+            "subtitle": "Experimente grátis por 30 dias. Cancele quando quiser.",
+            "badge": "Mais Popular",
+            "start": "Começar",
+            "trial": "Experimente grátis",
+            "basic": {
+                "name": "Básico",
+                "price": "R$ 16,90",
+                "feature1": "Qualidade de áudio padrão",
+                "feature2": "1 dispositivo por vez",
+                "feature3": "Catálogo completo",
+                "feature4": "Modo offline",
+                "feature5": "Áudio de alta qualidade"
+            },
+            "premium": {
+                "name": "Premium",
+                "price": "R$ 26,90",
+                "feature1": "Áudio de alta qualidade",
+                "feature2": "Até 3 dispositivos",
+                "feature3": "Catálogo completo",
+                "feature4": "Modo offline",
+                "feature5": "Sem anúncios"
+            },
+            "family": {
+                "name": "Familiar",
+                "price": "R$ 39,90",
+                "feature1": "Áudio de alta qualidade",
+                "feature2": "Até 6 dispositivos",
+                "feature3": "Catálogo completo",
+                "feature4": "Modo offline",
+                "feature5": "Perfis individuais"
+            }
+        },
+        "login": {
+            "title": "Entre na sua conta",
+            "subtitle": "Continue sua jornada musical",
+            "email": "E-mail ou nome de usuário",
+            "password": "Senha",
+            "remember": "Lembrar de mim",
+            "forgot": "Esqueceu a senha?",
+            "button": "Entrar",
+            "or": "ou",
+            "google": "Continuar com Google",
+            "apple": "Continuar com Apple",
+            "noAccount": "Não tem uma conta?",
+            "signup": "Inscrever-se no HarmonyStream",
+            "feature1": {
+                "title": "Milhões de músicas",
+                "description": "Acesso ilimitado ao maior catálogo de música"
+            },
+            "feature2": {
+                "title": "Ouça em qualquer lugar",
+                "description": "Disponível em todos os seus dispositivos"
+            },
+            "feature3": {
+                "title": "Modo offline",
+                "description": "Baixe suas músicas favoritas"
+            }
+        }
+    },
+    "en": {
+        "nav": {
+            "home": "Home",
+            "artists": "Artists",
+            "plans": "Plans",
+            "login": "Login"
+        },
+        "hero": {
+            "title": "Listen to your favorite pop artists without limits",
+            "subtitle": "Millions of songs. Zero ads. The ultimate music experience.",
+            "trial": "Start free trial",
+            "plans": "View plans"
+        },
+        "artists": {
+            "title": "Featured Artists",
+            "ariana": {
+                "name": "Ariana Grande",
+                "songs": "Positions • 7 rings • thank u, next",
+                "listeners": "85.4M monthly listeners",
+                "tags": [
+                    "Pop",
+                    "R&B"
+                ]
+            },
+            "sabrina": {
+                "name": "Sabrina Carpenter",
+                "songs": "Feather • Nonsense • Espresso",
+                "listeners": "75.4M monthly listeners",
+                "tags": [
+                    "Pop",
+                    "Dance"
+                ]
+            },
+            "nessa": {
+                "name": "Nessa Barrett",
+                "songs": "die first • madhouse • american jesus",
+                "listeners": "6.4M monthly listeners",
+                "tags": [
+                    "Alternative Pop",
+                    "Emo"
+                ]
+            },
+            "taylor": {
+                "name": "Taylor Swift",
+                "songs": "Anti-Hero • Shake It Off • Blank Space",
+                "listeners": "111.3M monthly listeners",
+                "tags": [
+                    "Pop",
+                    "Country"
+                ]
+            }
+        },
+        "plans": {
+            "title": "Choose your plan",
+            "subtitle": "Try free for 30 days. Cancel anytime.",
+            "badge": "Most Popular",
+            "start": "Get Started",
+            "trial": "Try for free",
+            "basic": {
+                "name": "Basic",
+                "price": "$9.99",
+                "feature1": "Standard audio quality",
+                "feature2": "1 device at a time",
+                "feature3": "Full catalog",
+                "feature4": "Offline mode",
+                "feature5": "High quality audio"
+            },
+            "premium": {
+                "name": "Premium",
+                "price": "$15.99",
+                "feature1": "High quality audio",
+                "feature2": "Up to 3 devices",
+                "feature3": "Full catalog",
+                "feature4": "Offline mode",
+                "feature5": "No ads"
+            },
+            "family": {
+                "name": "Family",
+                "price": "$23.99",
+                "feature1": "High quality audio",
+                "feature2": "Up to 6 devices",
+                "feature3": "Full catalog",
+                "feature4": "Offline mode",
+                "feature5": "Individual profiles"
+            }
+        },
+        "login": {
+            "title": "Log in to your account",
+            "subtitle": "Continue your musical journey",
+            "email": "Email or username",
+            "password": "Password",
+            "remember": "Remember me",
+            "forgot": "Forgot password?",
+            "button": "Log in",
+            "or": "or",
+            "google": "Continue with Google",
+            "apple": "Continue with Apple",
+            "noAccount": "Don't have an account?",
+            "signup": "Sign up for HarmonyStream",
+            "feature1": {
+                "title": "Millions of songs",
+                "description": "Unlimited access to the largest music catalog"
+            },
+            "feature2": {
+                "title": "Listen anywhere",
+                "description": "Available on all your devices"
+            },
+            "feature3": {
+                "title": "Offline mode",
+                "description": "Download your favorite songs"
+            }
+        }
+    }
+}
