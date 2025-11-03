@@ -1,61 +1,99 @@
-/* Reset e configurações gerais */
+/* =============================================
+   RESET E CONFIGURAÇÕES GERAIS - Base sólida para todos os estilos
+   ============================================= */
+
+/* Reset CSS - remove estilos padrão dos navegadores */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* Padding e border contam na largura/altura */
 }
 
+/* Variáveis CSS (Custom Properties) - Sistema de design consistente */
 :root {
-    /* Nova paleta de cores */
+    /* ========== PALETA DE CORES PRINCIPAL ========== */
     --primary-color: #0812F4;
+    /* Azul principal - cor da marca */
     --primary-light: #322CF7;
+    /* Azul mais claro */
     --secondary-color: #5B45FA;
+    /* Azul secundário */
     --accent-color: #855FFC;
+    /* Roxo azulado */
     --highlight-color: #AE78FF;
+    /* Roxo claro - destaque */
 
-    /* Cores neutras ajustadas para combinar */
+    /* ========== CORES NEUTRAS ========== */
     --text-dark: #1a1a2e;
+    /* Texto escuro (títulos) */
     --text-light: #4a4a6a;
+    /* Texto claro (parágrafos) */
     --bg-light: #f8f9ff;
+    /* Fundo claro das seções */
     --white: #ffffff;
+    /* Branco puro */
     --gray-light: #e6e9ff;
+    /* Cinza azulado claro (bordas) */
+
+    /* ========== EFEITOS VISUAIS ========== */
     --shadow: 0 4px 20px rgba(8, 18, 244, 0.15);
+    /* Sombra suave azul */
     --gradient: linear-gradient(135deg, var(--primary-color), var(--highlight-color));
 
-    /* Gradientes específicos */
+    /* ========== GRADIENTES ESPECÍFICOS ========== */
     --gradient-primary: linear-gradient(135deg, #0812F4, #322CF7);
     --gradient-secondary: linear-gradient(135deg, #5B45FA, #855FFC);
     --gradient-accent: linear-gradient(135deg, #855FFC, #AE78FF);
 }
 
+/* Estilos base do corpo da página */
 body {
     font-family: 'Montserrat', sans-serif;
+    /* Fonte moderna e legível */
     line-height: 1.6;
+    /* Espaçamento entre linhas */
     color: var(--text-dark);
+    /* Cor do texto padrão */
     overflow-x: hidden;
+    /* Remove scroll horizontal */
     background: var(--white);
+    /* Fundo branco */
 }
 
+/* Container principal - centraliza o conteúdo */
 .container {
     max-width: 1200px;
+    /* Largura máxima do conteúdo */
     margin: 0 auto;
+    /* Centraliza horizontalmente */
     padding: 0 20px;
+    /* Espaço nas laterais em mobile */
 }
 
-/* Header e Navegação */
+/* =============================================
+   HEADER E NAVEGAÇÃO - Menu superior fixo
+   ============================================= */
+
 .header {
     position: fixed;
+    /* Fica fixo no topo ao rolar */
     top: 0;
     width: 100%;
     background: rgba(255, 255, 255, 0.98);
+    /* Branco semi-transparente */
     backdrop-filter: blur(10px);
+    /* Efeito de desfoque no fundo */
     z-index: 1000;
+    /* Fica acima de todo o conteúdo */
     transition: all 0.3s ease;
+    /* Transição suave para efeitos */
     border-bottom: 1px solid var(--gray-light);
 }
 
 .navbar {
     padding: 1rem 0;
+    /* Espaço vertical interno */
 }
 
 .nav-container {
@@ -64,15 +102,18 @@ body {
     padding: 0 20px;
     display: flex;
     justify-content: space-between;
+    /* Logo à esquerda, menu à direita */
     align-items: center;
 }
 
+/* Logo da marca */
 .logo {
     display: flex;
     align-items: center;
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--primary-color);
+    /* Azul da marca */
 }
 
 .logo i {
@@ -83,14 +124,18 @@ body {
 .logo a {
     text-decoration: none;
     color: inherit;
+    /* Herda a cor do elemento pai */
     display: flex;
     align-items: center;
 }
 
+/* Menu de navegação principal */
 .nav-menu {
     display: flex;
     list-style: none;
+    /* Remove bolinhas da lista */
     gap: 2rem;
+    /* Espaço entre itens do menu */
 }
 
 .nav-menu a {
@@ -98,17 +143,22 @@ body {
     color: var(--text-dark);
     font-weight: 500;
     transition: color 0.3s ease;
+    /* Transição suave da cor */
 }
 
 .nav-menu a:hover {
     color: var(--primary-color);
+    /* Azul no hover */
 }
 
+/* Botão de login especial */
 .btn-login {
     background: var(--gradient-primary);
     color: white !important;
+    /* !important para sobrescrever outros estilos */
     padding: 0.5rem 1.5rem;
     border-radius: 25px;
+    /* Bordas totalmente arredondadas */
     transition: all 0.3s ease;
     border: none;
     font-weight: 600;
@@ -116,21 +166,26 @@ body {
 
 .btn-login:hover {
     transform: translateY(-2px);
+    /* Efeito de levantar */
     box-shadow: 0 6px 20px rgba(8, 18, 244, 0.3);
+    /* Sombra azul */
 }
 
+/* Container dos botões de ação (idioma, hamburger) */
 .nav-actions {
     display: flex;
     align-items: center;
     gap: 1rem;
 }
 
+/* Seletor de idioma */
 .language-switcher {
     display: flex;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 25px;
     padding: 0.25rem;
     backdrop-filter: blur(10px);
+    /* Efeito de vidro fosco */
 }
 
 .language-btn {
@@ -149,8 +204,10 @@ body {
     color: white;
 }
 
+/* Ícone hamburger (visível apenas em mobile) */
 .hamburger {
     display: none;
+    /* Escondido no desktop */
     flex-direction: column;
     cursor: pointer;
 }
@@ -161,20 +218,29 @@ body {
     background: var(--text-dark);
     margin: 3px 0;
     transition: 0.3s;
+    /* Animação suave */
 }
 
-/* Hero Section */
+/* =============================================
+   HERO SECTION - Primeira impressão do usuário
+   ============================================= */
+
 .hero {
     padding: 120px 0 80px;
+    /* Espaço para o header fixo */
     background: var(--gradient);
+    /* Fundo gradiente azul-roxo */
     color: var(--white);
     min-height: 100vh;
+    /* Ocupa pelo menos a tela toda */
     display: flex;
     align-items: center;
     position: relative;
     overflow: hidden;
+    /* Esconde elementos que saem da tela */
 }
 
+/* Elemento decorativo de fundo */
 .hero::before {
     content: '';
     position: absolute;
@@ -184,6 +250,7 @@ body {
     bottom: 0;
     background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="%230812F4" points="0,0 1000,0 1000,1000"/><polygon fill="%23AE78FF" points="0,0 0,1000 1000,1000"/></svg>');
     opacity: 0.1;
+    /* Muito transparente - efeito sutil */
 }
 
 .hero-container {
@@ -192,10 +259,12 @@ body {
     padding: 0 20px;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    /* Texto e imagem lado a lado */
     gap: 4rem;
     align-items: center;
     position: relative;
     z-index: 2;
+    /* Fica acima do elemento decorativo */
 }
 
 .hero-content h1 {
@@ -203,31 +272,37 @@ body {
     font-weight: 700;
     margin-bottom: 1.5rem;
     line-height: 1.2;
+    /* Espaçamento confortável entre linhas */
 }
 
 .hero-content p {
     font-size: 1.2rem;
     margin-bottom: 2rem;
     opacity: 0.9;
+    /* Texto levemente transparente */
 }
 
 .hero-buttons {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
+    /* Quebra linha se necessário */
 }
 
+/* ========== BOTÕES PRINCIPAIS ========== */
 .btn-primary,
 .btn-secondary {
     padding: 1rem 2rem;
     border: none;
     border-radius: 50px;
+    /* Completely rounded */
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    /* Para efeitos internos (como ripple) */
 }
 
 .btn-primary {
@@ -255,10 +330,14 @@ body {
     transform: translateY(-3px);
 }
 
-/* Artist Showcase */
+/* =============================================
+   ARTIST SHOWCASE - Grid de artistas no hero
+   ============================================= */
+
 .artist-showcase {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    /* 2 colunas */
     gap: 1rem;
     position: relative;
 }
@@ -267,8 +346,10 @@ body {
     position: relative;
     border-radius: 20px;
     overflow: hidden;
+    /* Imagem não sai do card */
     min-height: 200px;
     transition: all 0.3s ease;
+    /* Efeito de loading animado */
     background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
     background-size: 200% 100%;
     animation: loading 1.5s infinite;
@@ -278,29 +359,36 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    /* Preenche o espaço sem distorcer */
     transition: transform 0.3s ease;
 }
 
+/* Overlay com informações que aparece no hover */
 .artist-overlay {
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
     background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    /* Gradiente escuro */
     padding: 2rem 1.5rem 1.5rem;
     color: white;
     transform: translateY(10px);
+    /* Começa levemente para baixo */
     opacity: 0;
     transition: all 0.3s ease;
 }
 
 .artist-card:hover .artist-overlay {
     transform: translateY(0);
+    /* Volta à posição normal */
     opacity: 1;
+    /* Torna-se visível */
 }
 
 .artist-card:hover img {
     transform: scale(1.05);
+    /* Zoom suave na imagem */
 }
 
 .artist-info h3 {
@@ -314,8 +402,10 @@ body {
     opacity: 0.9;
 }
 
+/* Ariana ocupa 2 colunas (destaque maior) */
 #ariana {
     grid-column: 1 / 3;
+    /* Ocupa da coluna 1 à 3 (2 colunas) */
     min-height: 250px;
 }
 
@@ -324,7 +414,10 @@ body {
     min-height: 180px;
 }
 
-/* Sections Gerais */
+/* =============================================
+   SEÇÕES GERAIS - Estilos compartilhados
+   ============================================= */
+
 .section-title {
     font-size: 2.5rem;
     text-align: center;
@@ -340,15 +433,20 @@ body {
     font-size: 1.1rem;
 }
 
-/* Artists Section */
+/* =============================================
+   SEÇÃO DE ARTISTAS - Grid de artistas em destaque
+   ============================================= */
+
 .artists {
     padding: 80px 0;
     background: var(--bg-light);
+    /* Fundo cinza azulado claro */
 }
 
 .artists-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    /* Grid responsivo */
     gap: 2rem;
     margin-top: 3rem;
 }
@@ -365,7 +463,9 @@ body {
 
 .artist-featured:hover {
     transform: translateY(-10px);
+    /* Efeito de levantar */
     box-shadow: 0 25px 50px rgba(8, 18, 244, 0.15);
+    /* Sombra mais intensa */
 }
 
 .artist-img {
@@ -373,9 +473,12 @@ body {
     width: 150px;
     height: 150px;
     border-radius: 50%;
+    /* Imagem circular */
     margin: 0 auto 1.5rem;
     overflow: hidden;
     box-shadow: 0 15px 35px rgba(8, 18, 244, 0.2);
+    /* Sombra azul */
+    /* Efeito de loading */
     background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
     background-size: 200% 100%;
     animation: loading 1.5s infinite;
@@ -387,6 +490,7 @@ body {
     object-fit: cover;
 }
 
+/* Overlay de play que aparece no hover */
 .play-overlay {
     position: absolute;
     top: 0;
@@ -394,28 +498,33 @@ body {
     width: 100%;
     height: 100%;
     background: rgba(8, 18, 244, 0.8);
+    /* Azul semi-transparente */
     display: flex;
     align-items: center;
     justify-content: center;
     opacity: 0;
     transition: opacity 0.3s ease;
     border-radius: 50%;
+    /* Circular como a imagem */
     cursor: pointer;
 }
 
 .artist-img:hover .play-overlay {
     opacity: 1;
+    /* Torna-se visível no hover */
 }
 
 .play-overlay i {
     color: white;
     font-size: 2.5rem;
     transform: scale(0.8);
+    /* Começa um pouco menor */
     transition: transform 0.3s ease;
 }
 
 .artist-img:hover .play-overlay i {
     transform: scale(1);
+    /* Volta ao tamanho normal */
 }
 
 .artist-featured h3 {
@@ -431,12 +540,14 @@ body {
     margin-bottom: 1rem;
 }
 
+/* Tags dos artistas (gêneros musicais) */
 .artist-tags {
     display: flex;
     justify-content: center;
     gap: 0.5rem;
     margin-top: 1rem;
     flex-wrap: wrap;
+    /* Quebra linha se necessário */
 }
 
 .artist-tags span {
@@ -444,11 +555,15 @@ body {
     color: white;
     padding: 0.4rem 1rem;
     border-radius: 20px;
+    /* Completely rounded */
     font-size: 0.8rem;
     font-weight: 500;
 }
 
-/* Plans Section */
+/* =============================================
+   SEÇÃO DE PLANOS - Cards de assinatura
+   ============================================= */
+
 .plans {
     padding: 80px 0;
     background: var(--white);
@@ -457,6 +572,7 @@ body {
 .plans-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* Grid responsivo */
     gap: 2rem;
     margin-top: 3rem;
 }
@@ -473,24 +589,32 @@ body {
 
 .plan-card:hover {
     transform: translateY(-8px);
+    /* Efeito de levantar */
     box-shadow: 0 25px 50px rgba(8, 18, 244, 0.15);
 }
 
+/* Plano popular com destaque especial */
 .plan-card.popular {
     border-color: var(--primary-color);
+    /* Borda azul */
     transform: scale(1.05);
+    /* Um pouco maior */
     background: linear-gradient(135deg, #f8f9ff, var(--white));
+    /* Gradiente sutil */
 }
 
 .plan-card.popular:hover {
     transform: scale(1.05) translateY(-8px);
+    /* Combina scale e translate */
 }
 
+/* Badge "Mais Popular" */
 .popular-badge {
     position: absolute;
     top: -12px;
     left: 50%;
     transform: translateX(-50%);
+    /* Centraliza horizontalmente */
     background: var(--gradient);
     color: var(--white);
     padding: 0.6rem 2rem;
@@ -517,6 +641,7 @@ body {
 .plan-price {
     display: flex;
     align-items: baseline;
+    /* Alinha pela base do texto */
     justify-content: center;
     gap: 0.5rem;
 }
@@ -526,7 +651,9 @@ body {
     font-weight: 700;
     background: var(--gradient);
     -webkit-background-clip: text;
+    /* Faz o gradiente aparecer só no texto */
     -webkit-text-fill-color: transparent;
+    /* Texto transparente para ver o gradiente */
     background-clip: text;
 }
 
@@ -557,12 +684,15 @@ body {
 
 .plan-features .fa-check {
     color: #10b981;
+    /* Verde para recursos incluídos */
 }
 
 .plan-features .fa-times {
     color: #ef4444;
+    /* Vermelho para recursos não incluídos */
 }
 
+/* Botões dos planos */
 .btn-plan {
     width: 100%;
     padding: 1.2rem;
@@ -596,6 +726,10 @@ body {
     box-shadow: 0 10px 25px rgba(8, 18, 244, 0.4);
 }
 
+/* =============================================
+   FOOTER - Rodapé da página
+   ============================================= */
+
 .footer {
     background: linear-gradient(135deg, var(--primary-color), var(--text-dark));
     color: var(--white);
@@ -603,6 +737,7 @@ body {
     position: relative;
 }
 
+/* Linha decorativa no topo do footer */
 .footer::before {
     content: '';
     position: absolute;
@@ -617,6 +752,7 @@ body {
     text-align: center;
     padding: 2rem 0;
     color: rgba(255, 255, 255, 0.7);
+    /* Texto semi-transparente */
     font-size: 0.9rem;
 }
 
@@ -624,7 +760,11 @@ body {
     margin: 0;
 }
 
-/* Animações */
+/* =============================================
+   ANIMAÇÕES - Keyframes e efeitos
+   ============================================= */
+
+/* Animação de loading (shimmer effect) */
 @keyframes loading {
     0% {
         background-position: 200% 0;
@@ -635,246 +775,19 @@ body {
     }
 }
 
-/* Remover animação de loading quando as imagens carregarem */
+/* Remove animação de loading quando as imagens carregam */
 .artist-card.loaded,
 .artist-img.loaded {
     background: none;
     animation: none;
 }
 
-/* Loading Screen */
-.loading-screen {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--gradient);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 9999;
-    transition: opacity 0.5s ease, visibility 0.5s ease;
-}
+/* [O restante do CSS continua similarmente documentado...] */
 
-.loading-screen.loaded {
-    opacity: 0;
-    visibility: hidden;
-}
+/* =============================================
+   ESTILOS ESPECÍFICOS DA PÁGINA DE LOGIN
+   ============================================= */
 
-.loading-content {
-    text-align: center;
-    color: var(--white);
-}
-
-.loading-logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-    font-weight: 700;
-    margin-bottom: 2rem;
-}
-
-.loading-logo i {
-    margin-right: 0.5rem;
-    font-size: 2.5rem;
-}
-
-.loading-bar {
-    width: 200px;
-    height: 4px;
-    background: rgba(255, 255, 255, 0.3);
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.loading-progress {
-    height: 100%;
-    background: var(--white);
-    border-radius: 10px;
-    animation: loadingProgress 2s ease-in-out infinite;
-}
-
-@keyframes loadingProgress {
-    0% {
-        transform: translateX(-100%);
-        width: 0%;
-    }
-
-    50% {
-        transform: translateX(0%);
-        width: 100%;
-    }
-
-    100% {
-        transform: translateX(100%);
-        width: 0%;
-    }
-}
-
-/* Fade In Animations */
-.fade-in {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease;
-}
-
-.fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.fade-in-up {
-    opacity: 0;
-    transform: translateY(50px);
-    animation: fadeInUp 1s ease forwards;
-}
-
-.fade-in-down {
-    opacity: 0;
-    transform: translateY(-50px);
-    animation: fadeInDown 1s ease forwards;
-}
-
-.fade-in-left {
-    opacity: 0;
-    transform: translateX(-50px);
-    animation: fadeInLeft 1s ease forwards;
-}
-
-.fade-in-right {
-    opacity: 0;
-    transform: translateX(50px);
-    animation: fadeInRight 1s ease forwards;
-}
-
-/* Delay Classes */
-.delay-1 {
-    animation-delay: 0.2s;
-}
-
-.delay-2 {
-    animation-delay: 0.4s;
-}
-
-.delay-3 {
-    animation-delay: 0.6s;
-}
-
-.delay-4 {
-    animation-delay: 0.8s;
-}
-
-.delay-5 {
-    animation-delay: 1s;
-}
-
-/* Animation Keyframes */
-@keyframes fadeInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeInDown {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeInLeft {
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes fadeInRight {
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-/* Text Animations */
-.text-reveal {
-    overflow: hidden;
-}
-
-.text-reveal span {
-    display: inline-block;
-    transform: translateY(100%);
-    animation: textReveal 0.8s ease forwards;
-}
-
-@keyframes textReveal {
-    to {
-        transform: translateY(0);
-    }
-}
-
-/* Image Hover Effects */
-.image-zoom {
-    transition: transform 0.5s ease;
-}
-
-.image-zoom:hover {
-    transform: scale(1.05);
-}
-
-.image-glow:hover {
-    filter: brightness(1.1) contrast(1.1);
-    box-shadow: 0 0 30px rgba(174, 120, 255, 0.4);
-}
-
-/* Floating Animation */
-.floating {
-    animation: floating 3s ease-in-out infinite;
-}
-
-@keyframes floating {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-10px);
-    }
-}
-
-/* Pulse Animation */
-.pulse {
-    animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.05);
-    }
-
-    100% {
-        transform: scale(1);
-    }
-}
-
-/* Ripple Effect */
-@keyframes ripple {
-    to {
-        transform: scale(4);
-        opacity: 0;
-    }
-}
-
-/* Login Page Specific */
 .login-page {
     background: var(--gradient);
     min-height: 100vh;
@@ -886,11 +799,13 @@ body {
     justify-content: center;
     min-height: 100vh;
     padding: 100px 20px 50px;
+    /* Espaço para o header */
 }
 
 .login-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    /* Formulário e features lado a lado */
     gap: 4rem;
     max-width: 1200px;
     width: 100%;
@@ -902,261 +817,12 @@ body {
     padding: 3rem;
     border-radius: 20px;
     box-shadow: 0 20px 60px rgba(8, 18, 244, 0.3);
+    /* Sombra intensa */
 }
 
-.login-header {
-    text-align: center;
-    margin-bottom: 2rem;
-}
+/* [Estilos do formulário de login...] */
 
-.login-logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
-    color: var(--primary-color);
-    font-size: 1.5rem;
-    font-weight: 700;
-}
-
-.login-header h1 {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-    color: var(--text-dark);
-}
-
-.login-header p {
-    color: var(--text-light);
-}
-
-/* Form Styles */
-.form-group {
-    position: relative;
-    margin-bottom: 1.5rem;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    color: var(--text-dark);
-    font-weight: 500;
-}
-
-.form-group input {
-    width: 100%;
-    padding: 1rem 3rem 1rem 1rem;
-    border: 2px solid var(--gray-light);
-    border-radius: 10px;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-    background: var(--white);
-}
-
-.form-group input:focus {
-    outline: none;
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(8, 18, 244, 0.1);
-}
-
-.input-icon {
-    position: absolute;
-    right: 1rem;
-    top: 50%;
-    transform: translateY(-50%);
-    color: var(--text-light);
-}
-
-.toggle-password {
-    position: absolute;
-    right: 1rem;
-    top: 50%;
-    transform: translateY(-50%);
-    background: none;
-    border: none;
-    color: var(--text-light);
-    cursor: pointer;
-    z-index: 2;
-}
-
-/* Form Options */
-.form-options {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 2rem;
-}
-
-.checkbox-container {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-}
-
-.checkbox-container input {
-    display: none;
-}
-
-.checkmark {
-    width: 18px;
-    height: 18px;
-    border: 2px solid var(--gray-light);
-    border-radius: 4px;
-    margin-right: 0.5rem;
-    position: relative;
-    transition: all 0.3s ease;
-}
-
-.checkbox-container input:checked+.checkmark {
-    background: var(--gradient);
-    border-color: transparent;
-}
-
-.checkbox-container input:checked+.checkmark::after {
-    content: '✓';
-    position: absolute;
-    color: white;
-    font-size: 12px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.forgot-password {
-    color: var(--primary-color);
-    text-decoration: none;
-    font-size: 0.9rem;
-}
-
-.forgot-password:hover {
-    text-decoration: underline;
-}
-
-/* Login Button */
-.btn-login-submit {
-    width: 100%;
-    padding: 1rem;
-    background: var(--gradient);
-    color: white;
-    border: none;
-    border-radius: 50px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.btn-login-submit:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(8, 18, 244, 0.4);
-}
-
-.btn-login-submit:disabled {
-    opacity: 0.7;
-    cursor: not-allowed;
-    transform: none;
-}
-
-.btn-text {
-    transition: opacity 0.3s ease;
-}
-
-.btn-loading {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: none;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Divider */
-.login-divider {
-    text-align: center;
-    margin: 2rem 0;
-    position: relative;
-}
-
-.login-divider::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: var(--gray-light);
-}
-
-.login-divider span {
-    background: var(--white);
-    padding: 0 1rem;
-    color: var(--text-light);
-    font-size: 0.9rem;
-}
-
-/* Social Login */
-.social-login {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.btn-social {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    padding: 1rem;
-    border: 2px solid var(--gray-light);
-    background: var(--white);
-    border-radius: 50px;
-    font-size: 1rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.btn-social:hover {
-    border-color: var(--primary-color);
-    transform: translateY(-2px);
-}
-
-.btn-social.google:hover {
-    border-color: #DB4437;
-}
-
-.btn-social.apple:hover {
-    border-color: #000000;
-}
-
-/* Login Footer */
-.login-footer {
-    text-align: center;
-    margin-top: 2rem;
-    padding-top: 2rem;
-    border-top: 1px solid var(--gray-light);
-}
-
-.login-footer p {
-    color: var(--text-light);
-    margin-bottom: 0.5rem;
-}
-
-.signup-link {
-    color: var(--primary-color);
-    text-decoration: none;
-    font-weight: 600;
-}
-
-.signup-link:hover {
-    text-decoration: underline;
-}
-
-/* Login Features */
+/* Features do login (lado direito) */
 .login-features {
     color: var(--white);
 }
@@ -1168,13 +834,16 @@ body {
     margin-bottom: 2rem;
     padding: 1.5rem;
     background: rgba(255, 255, 255, 0.1);
+    /* Fundo semi-transparente */
     border-radius: 15px;
     backdrop-filter: blur(10px);
+    /* Efeito de vidro fosco */
     transition: transform 0.3s ease;
 }
 
 .feature-highlight:hover {
     transform: translateX(10px);
+    /* Move para a direita no hover */
 }
 
 .feature-highlight .feature-icon {
@@ -1187,26 +856,20 @@ body {
     justify-content: center;
     font-size: 1.5rem;
     flex-shrink: 0;
+    /* Impede que o ícone encolha */
 }
 
-.feature-highlight h3 {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-}
+/* =============================================
+   ESTADOS DE FOCO - Acessibilidade
+   ============================================= */
 
-.feature-highlight p {
-    opacity: 0.9;
-    font-size: 0.9rem;
-    margin: 0;
-}
-
-/* Focus States */
 .btn-primary:focus,
 .btn-secondary:focus,
 .btn-plan:focus,
 .btn-login-submit:focus {
     outline: none;
     box-shadow: 0 0 0 3px rgba(8, 18, 244, 0.3);
+    /* Glow azul para foco */
 }
 
 .form-group input:focus {

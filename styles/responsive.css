@@ -1,197 +1,280 @@
-/* Tablets */
+/* =============================================
+   TABLETS - Telas até 1024px (iPad, tablets grandes)
+   ============================================= */
+
 @media (max-width: 1024px) {
     .hero-content h1 {
         font-size: 2.8rem;
+        /* Reduz um pouco o título hero */
     }
 
     .hero-container {
         gap: 2rem;
+        /* Menos espaço entre conteúdo e imagem */
     }
 
     .footer-content {
         grid-template-columns: 1fr 1fr;
+        /* Footer em 2 colunas ao invés de 4 */
         gap: 2rem;
     }
 
     .section-title {
         font-size: 2.2rem;
+        /* Títulos de seção um pouco menores */
     }
 
     .login-container {
         grid-template-columns: 1fr;
+        /* Login vira uma coluna só */
         gap: 3rem;
     }
 }
 
-/* Tablets Pequenas e Mobile */
+/* =============================================
+   TABLETS PEQUENAS E MOBILE - Telas até 768px (iPad Mini, smartphones grandes)
+   ============================================= */
+
 @media (max-width: 768px) {
+
+    /* ========== MENU MOBILE ========== */
     .nav-menu {
         position: fixed;
+        /* Menu fica fixo na tela */
         left: -100%;
+        /* Começa fora da tela (esquerda) */
         top: 70px;
+        /* Abaixo do header */
         flex-direction: column;
+        /* Itens em coluna (um embaixo do outro) */
         background: var(--white);
         width: 100%;
+        /* Ocupa toda a largura */
         text-align: center;
         transition: 0.3s;
+        /* Animação suave de entrada/saída */
         box-shadow: var(--shadow);
+        /* Sombra para destacar */
         padding: 2rem 0;
         gap: 0;
     }
 
+    /* Quando o menu está ativo (hamburger clicado) */
     .nav-menu.active {
         left: 0;
+        /* Volta para a posição normal (dentro da tela) */
     }
 
     .nav-menu li {
         margin: 1rem 0;
+        /* Espaçamento entre itens do menu */
     }
 
     .hamburger {
         display: flex;
+        /* Mostra o ícone hamburger (estava escondido no desktop) */
     }
 
+    /* ========== ANIMAÇÃO DO HAMBURGER ========== */
+    /* Transforma as 3 linhas no "X" quando ativo */
     .hamburger.active span:nth-child(2) {
         opacity: 0;
+        /* Linha do meio some */
     }
 
     .hamburger.active span:nth-child(1) {
         transform: translateY(8px) rotate(45deg);
+        /* Linha de cima vira \ */
     }
 
     .hamburger.active span:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
+        /* Linha de baixo vira / */
     }
 
+    /* ========== HERO SECTION ========== */
     .hero-container {
         grid-template-columns: 1fr;
+        /* Uma coluna só (imagem abaixo do texto) */
         text-align: center;
+        /* Texto centralizado */
         gap: 3rem;
     }
 
     .hero-content h1 {
         font-size: 2.5rem;
+        /* Título ainda menor */
     }
 
     .hero-buttons {
         justify-content: center;
+        /* Botões centralizados */
     }
 
     .section-title {
         font-size: 2rem;
+        /* Títulos de seção menores */
     }
 
+    /* ========== PLANOS ========== */
     .plan-card.popular {
         transform: scale(1);
+        /* Remove o destaque de escala no popular */
     }
 
     .plan-card.popular:hover {
         transform: translateY(-8px);
+        /* Mantém apenas o efeito de levantar */
     }
 
+    /* ========== SHOWCASE DE ARTISTAS ========== */
     .artist-showcase {
         grid-template-columns: 1fr;
+        /* Artistas em uma coluna só */
     }
 
     #ariana {
         grid-column: 1;
+        /* Ariana ocupa apenas uma coluna (não mais duas) */
     }
 
+    /* ========== FOOTER ========== */
     .footer-content {
         grid-template-columns: 1fr;
+        /* Footer em uma coluna só */
         text-align: center;
     }
 
     .social-links {
         justify-content: center;
+        /* Ícones sociais centralizados */
     }
 
+    /* ========== LOGIN ========== */
     .login-container {
         grid-template-columns: 1fr;
+        /* Formulário e features em coluna */
         gap: 2rem;
     }
 
     .login-features {
         order: -1;
+        /* Features aparecem ANTES do formulário (acima) */
     }
 
+    /* ========== HEADER ========== */
     .nav-actions {
         gap: 0.5rem;
+        /* Menos espaço entre botões de idioma e hamburger */
     }
 
     .language-switcher {
         font-size: 0.9rem;
+        /* Botões de idioma um pouco menores */
     }
 }
 
-/* Mobile Pequeno */
+/* =============================================
+   MOBILE PEQUENO - Telas até 480px (smartphones menores)
+   ============================================= */
+
 @media (max-width: 480px) {
+
+    /* ========== HERO SECTION ========== */
     .hero-content h1 {
         font-size: 2rem;
+        /* Título bem compacto */
     }
 
     .hero-content p {
         font-size: 1rem;
+        /* Texto normal (já está pequeno) */
     }
 
+    /* ========== BOTÕES ========== */
     .btn-primary,
     .btn-secondary {
         padding: 0.8rem 1.5rem;
+        /* Botões mais compactos */
         font-size: 0.9rem;
+        /* Texto menor */
         width: 100%;
+        /* Largura total */
         max-width: 250px;
+        /* Mas com limite máximo */
     }
 
     .hero-buttons {
         flex-direction: column;
+        /* Botões em coluna (um embaixo do outro) */
         align-items: center;
+        /* Centralizados */
     }
 
+    /* ========== TÍTULOS ========== */
     .section-title {
         font-size: 1.8rem;
+        /* Títulos ainda menores */
     }
 
+    /* ========== GRIDS ========== */
     .plans-grid,
     .artists-grid,
     .features-grid {
         grid-template-columns: 1fr;
+        /* Tudo em uma coluna só */
     }
 
+    /* ========== FOOTER ========== */
     .footer-content {
         grid-template-columns: 1fr;
+        /* Footer em coluna única */
         gap: 2rem;
     }
 
+    /* ========== LAYOUT GERAL ========== */
     .container {
         padding: 0 15px;
+        /* Menos padding nas laterais */
     }
 
+    /* ========== CARDS ========== */
     .plan-card,
     .artist-featured,
     .feature-card {
         padding: 2rem 1.5rem;
+        /* Menos padding interno nos cards */
     }
 
+    /* ========== IMAGENS DE ARTISTAS ========== */
     .artist-img {
         width: 120px;
+        /* Imagens menores */
         height: 120px;
     }
 
+    /* ========== LOGIN ========== */
     .login-card {
         padding: 2rem 1.5rem;
+        /* Card de login mais compacto */
     }
 
     .form-options {
         flex-direction: column;
+        /* "Lembrar senha" e "Esqueci senha" em coluna */
         gap: 1rem;
         align-items: flex-start;
+        /* Alinhados à esquerda */
     }
 
+    /* ========== BOTÕES DE IDIOMA ========== */
     .language-switcher {
         font-size: 0.8rem;
+        /* Texto ainda menor */
     }
 
     .language-btn {
         padding: 0.4rem 0.8rem;
+        /* Botões mais compactos */
     }
 }

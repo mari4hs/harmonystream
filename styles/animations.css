@@ -1,27 +1,42 @@
+/* =============================================
+   TELA DE CARREGAMENTO - Primeira impressão do usuário
+   ============================================= */
+
 .loading-screen {
     position: fixed;
+    /* Fica fixo cobrindo toda a tela */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background: var(--gradient);
+    /* Usa o gradiente principal do tema */
     display: flex;
     align-items: center;
+    /* Centraliza verticalmente */
     justify-content: center;
+    /* Centraliza horizontalmente */
     z-index: 9999;
+    /* Fica acima de tudo na página */
     transition: opacity 0.5s ease, visibility 0.5s ease;
+    /* Some suavemente */
 }
 
+/* Quando o carregamento termina, a tela fica invisível */
 .loading-screen.loaded {
     opacity: 0;
     visibility: hidden;
+    /* Some completamente da tela */
 }
 
+/* Container do conteúdo do loading */
 .loading-content {
     text-align: center;
     color: var(--white);
+    /* Texto branco para contraste */
 }
 
+/* Logo animada do loading */
 .loading-logo {
     display: flex;
     align-items: center;
@@ -34,14 +49,18 @@
 .loading-logo i {
     margin-right: 0.5rem;
     font-size: 2.5rem;
+    /* Ícone ligeiramente maior que o texto */
 }
 
+/* Barra de progresso animada */
 .loading-bar {
     width: 200px;
     height: 4px;
     background: rgba(255, 255, 255, 0.3);
+    /* Fundo semi-transparente */
     border-radius: 10px;
     overflow: hidden;
+    /* Esconde o que passar da barra */
 }
 
 .loading-progress {
@@ -49,90 +68,130 @@
     background: var(--white);
     border-radius: 10px;
     animation: loadingProgress 2s ease-in-out infinite;
+    /* Animação contínua */
 }
 
+/* Animação da barra de progresso - vai e volta */
 @keyframes loadingProgress {
     0% {
         transform: translateX(-100%);
+        /* Começa totalmente à esquerda */
         width: 0%;
+        /* E sem largura */
     }
 
     50% {
         transform: translateX(0%);
+        /* Chega no centro */
         width: 100%;
+        /* Com largura total */
     }
 
     100% {
         transform: translateX(100%);
+        /* Sai totalmente pela direita */
         width: 0%;
+        /* E some novamente */
     }
 }
 
+/* =============================================
+   ANIMAÇÕES DE ENTRADA - Elementos aparecendo
+   ============================================= */
 
+/* Fade In básico - aparece vindo de baixo */
 .fade-in {
     opacity: 0;
     transform: translateY(30px);
+    /* Começa 30px mais abaixo */
     transition: all 0.8s ease;
+    /* Transição suave de 0.8 segundos */
 }
 
 .fade-in.visible {
     opacity: 1;
     transform: translateY(0);
+    /* Termina na posição normal */
 }
 
+/* Fade In vindo de baixo (mais dramático) */
 .fade-in-up {
     opacity: 0;
     transform: translateY(50px);
+    /* Começa 50px mais abaixo */
     animation: fadeInUp 1s ease forwards;
+    /* Animação que mantém estado final */
 }
 
+/* Fade In vindo de cima */
 .fade-in-down {
     opacity: 0;
     transform: translateY(-50px);
+    /* Começa 50px mais acima */
     animation: fadeInDown 1s ease forwards;
 }
 
+/* Fade In vindo da esquerda */
 .fade-in-left {
     opacity: 0;
     transform: translateX(-50px);
+    /* Começa 50px mais à esquerda */
     animation: fadeInLeft 1s ease forwards;
 }
 
+/* Fade In vindo da direita */
 .fade-in-right {
     opacity: 0;
     transform: translateX(50px);
+    /* Começa 50px mais à direita */
     animation: fadeInRight 1s ease forwards;
 }
 
+/* =============================================
+   DELAYS - Controle de timing das animações
+   ============================================= */
 
+/* Classes de delay para criar sequências animadas */
 .delay-1 {
     animation-delay: 0.2s;
 }
 
+/* 200ms de delay */
 .delay-2 {
     animation-delay: 0.4s;
 }
 
+/* 400ms de delay */
 .delay-3 {
     animation-delay: 0.6s;
 }
 
+/* 600ms de delay */
 .delay-4 {
     animation-delay: 0.8s;
 }
 
+/* 800ms de delay */
 .delay-5 {
     animation-delay: 1s;
 }
 
+/* 1 segundo de delay */
 
+/* =============================================
+   KEYFRAMES - Definições das animações
+   ============================================= */
+
+/* Animação: aparece subindo */
 @keyframes fadeInUp {
     to {
         opacity: 1;
         transform: translateY(0);
+        /* Posição final normal */
     }
 }
 
+/* Animação: aparece descendo */
 @keyframes fadeInDown {
     to {
         opacity: 1;
@@ -140,6 +199,7 @@
     }
 }
 
+/* Animação: aparece da esquerda */
 @keyframes fadeInLeft {
     to {
         opacity: 1;
@@ -147,6 +207,7 @@
     }
 }
 
+/* Animação: aparece da direita */
 @keyframes fadeInRight {
     to {
         opacity: 1;
@@ -154,40 +215,61 @@
     }
 }
 
+/* =============================================
+   ANIMAÇÕES DE TEXTO - Efeitos especiais em texto
+   ============================================= */
 
+/* Revelação de texto - cada letra/palavra aparece sequencialmente */
 .text-reveal {
     overflow: hidden;
+    /* Esconde o texto que ainda não apareceu */
 }
 
 .text-reveal span {
     display: inline-block;
     transform: translateY(100%);
+    /* Começa totalmente para baixo */
     animation: textReveal 0.8s ease forwards;
 }
 
 @keyframes textReveal {
     to {
         transform: translateY(0);
+        /* Termina na posição normal */
     }
 }
 
+/* =============================================
+   EFEITOS HOVER - Interações ao passar o mouse
+   ============================================= */
 
+/* Zoom suave em imagens */
 .image-zoom {
     transition: transform 0.5s ease;
+    /* Transição suave de 0.5s */
 }
 
 .image-zoom:hover {
     transform: scale(1.05);
+    /* Aumenta 5% no hover */
 }
 
+/* Brilho e sombra em imagens */
 .image-glow:hover {
     filter: brightness(1.1) contrast(1.1);
+    /* Aumenta brilho e contraste */
     box-shadow: 0 0 30px rgba(174, 120, 255, 0.4);
+    /* Sombra colorida */
 }
 
+/* =============================================
+   ANIMAÇÕES CONTÍNUAS - Efeitos que ficam rodando
+   ============================================= */
 
+/* Flutuação suave - sobe e desce continuamente */
 .floating {
     animation: floating 3s ease-in-out infinite;
+    /* Repete infinitamente */
 }
 
 @keyframes floating {
@@ -195,46 +277,61 @@
     0%,
     100% {
         transform: translateY(0);
+        /* Posição normal */
     }
 
     50% {
         transform: translateY(-10px);
+        /* Sobe 10px no meio da animação */
     }
 }
 
+/* Pulsação - cresce e diminui suavemente */
 .pulse {
     animation: pulse 2s infinite;
+    /* Repete a cada 2 segundos */
 }
 
 @keyframes pulse {
     0% {
         transform: scale(1);
+        /* Tamanho normal */
     }
 
     50% {
         transform: scale(1.05);
+        /* Aumenta 5% */
     }
 
     100% {
         transform: scale(1);
+        /* Volta ao normal */
     }
 }
 
+/* =============================================
+   EFEITO MÁQUINA DE ESCREVER - Texto digitando
+   ============================================= */
 
 .typewriter {
     overflow: hidden;
     border-right: 2px solid var(--primary-color);
+    /* Cursor piscante */
     white-space: nowrap;
+    /* Impede quebra de linha */
     animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+    /* Duas animações: digitação + cursor piscante */
 }
 
 @keyframes typing {
     from {
-        width: 0
+        width: 0;
+        /* Começa com largura zero (texto invisível) */
     }
 
     to {
-        width: 100%
+        width: 100%;
+        /* Termina com largura total (texto completo) */
     }
 }
 
@@ -242,52 +339,71 @@
 
     from,
     to {
-        border-color: transparent
+        border-color: transparent;
+        /* Cursor invisível */
     }
 
     50% {
-        border-color: var(--primary-color)
+        border-color: var(--primary-color);
+        /* Cursor visível */
     }
 }
 
+/* =============================================
+   EFEITO RIPPLE - Onda que expande (usado nos botões)
+   ============================================= */
 
 @keyframes ripple {
     to {
         transform: scale(4);
+        /* Expande 4x o tamanho original */
         opacity: 0;
+        /* Some gradualmente */
     }
 }
 
+/* =============================================
+   ESTILOS DA PÁGINA DE LOGIN - Design específico
+   ============================================= */
 
+/* Página de login com fundo gradiente */
 .login-page {
     background: var(--gradient);
     min-height: 100vh;
+    /* Ocupa pelo menos toda a altura da tela */
 }
 
+/* Seção principal do login */
 .login-section {
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
     padding: 100px 20px 50px;
+    /* Espaço para o header fixo */
 }
 
+/* Container com layout em grid para formulário e features */
 .login-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    /* Duas colunas iguais */
     gap: 4rem;
     max-width: 1200px;
     width: 100%;
     align-items: center;
 }
 
+/* Card do formulário de login */
 .login-card {
     background: var(--white);
     padding: 3rem;
     border-radius: 20px;
     box-shadow: 0 20px 60px rgba(8, 18, 244, 0.3);
+    /* Sombra azul suave */
 }
 
+/* Cabeçalho do card de login */
 .login-header {
     text-align: center;
     margin-bottom: 2rem;
@@ -314,8 +430,13 @@
     color: var(--text-light);
 }
 
+/* =============================================
+   FORMULÁRIO - Estilos dos inputs e labels
+   ============================================= */
+
 .form-group {
     position: relative;
+    /* Para posicionar ícones absolutamente */
     margin-bottom: 1.5rem;
 }
 
@@ -329,6 +450,7 @@
 .form-group input {
     width: 100%;
     padding: 1rem 3rem 1rem 1rem;
+    /* Espaço para ícones à direita */
     border: 2px solid var(--gray-light);
     border-radius: 10px;
     font-size: 1rem;
@@ -336,12 +458,15 @@
     background: var(--white);
 }
 
+/* Efeito de foco nos inputs */
 .form-group input:focus {
     outline: none;
     border-color: var(--primary-color);
     box-shadow: 0 0 0 3px rgba(8, 18, 244, 0.1);
+    /* Glow suave */
 }
 
+/* Ícones dentro dos inputs */
 .input-icon {
     position: absolute;
     right: 1rem;
@@ -350,6 +475,7 @@
     color: var(--text-light);
 }
 
+/* Botão para mostrar/esconder senha */
 .toggle-password {
     position: absolute;
     right: 1rem;
@@ -360,9 +486,13 @@
     color: var(--text-light);
     cursor: pointer;
     z-index: 2;
+    /* Fica acima do input */
 }
 
-/* Form Options */
+/* =============================================
+   OPÇÕES DO FORMULÁRIO - Lembrar senha, etc.
+   ============================================= */
+
 .form-options {
     display: flex;
     justify-content: space-between;
@@ -370,6 +500,7 @@
     margin-bottom: 2rem;
 }
 
+/* Checkbox customizado */
 .checkbox-container {
     display: flex;
     align-items: center;
@@ -378,6 +509,7 @@
 
 .checkbox-container input {
     display: none;
+    /* Esconde o checkbox nativo */
 }
 
 .checkmark {
@@ -390,6 +522,7 @@
     transition: all 0.3s ease;
 }
 
+/* Quando o checkbox está marcado */
 .checkbox-container input:checked+.checkmark {
     background: var(--gradient);
     border-color: transparent;
@@ -415,6 +548,10 @@
     text-decoration: underline;
 }
 
+/* =============================================
+   BOTÃO DE LOGIN - Estilos e estados
+   ============================================= */
+
 .btn-login-submit {
     width: 100%;
     padding: 1rem;
@@ -422,23 +559,28 @@
     color: white;
     border: none;
     border-radius: 50px;
+    /* Totalmente arredondado */
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    /* Para conter efeitos ripple */
 }
 
 .btn-login-submit:hover {
     transform: translateY(-2px);
+    /* Levanta suavemente */
     box-shadow: 0 10px 25px rgba(8, 18, 244, 0.4);
+    /* Sombra mais intensa */
 }
 
 .btn-login-submit:disabled {
     opacity: 0.7;
     cursor: not-allowed;
     transform: none;
+    /* Remove efeitos hover quando desabilitado */
 }
 
 .btn-text {
@@ -452,11 +594,15 @@
     width: 100%;
     height: 100%;
     display: none;
+    /* Inicialmente escondido */
     align-items: center;
     justify-content: center;
 }
 
-/* Divider */
+/* =============================================
+   DIVISÓRIA - "ou" entre formulário e login social
+   ============================================= */
+
 .login-divider {
     text-align: center;
     margin: 2rem 0;
@@ -471,16 +617,21 @@
     right: 0;
     height: 1px;
     background: var(--gray-light);
+    /* Linha divisória */
 }
 
 .login-divider span {
     background: var(--white);
+    /* Fundo branco para "cortar" a linha */
     padding: 0 1rem;
     color: var(--text-light);
     font-size: 0.9rem;
 }
 
-/* Social Login */
+/* =============================================
+   LOGIN SOCIAL - Botões do Google e Apple
+   ============================================= */
+
 .social-login {
     display: flex;
     flex-direction: column;
@@ -507,20 +658,27 @@
     transform: translateY(-2px);
 }
 
+/* Cores específicas para cada rede social no hover */
 .btn-social.google:hover {
     border-color: #DB4437;
+    /* Vermelho do Google */
 }
 
 .btn-social.apple:hover {
     border-color: #000000;
+    /* Preto da Apple */
 }
 
-/* Login Footer */
+/* =============================================
+   RODAPÉ DO LOGIN - Link para cadastro
+   ============================================= */
+
 .login-footer {
     text-align: center;
     margin-top: 2rem;
     padding-top: 2rem;
     border-top: 1px solid var(--gray-light);
+    /* Linha separadora */
 }
 
 .login-footer p {
@@ -538,6 +696,11 @@
     text-decoration: underline;
 }
 
+/* =============================================
+   ANIMAÇÕES ADICIONAIS - Para scroll e hover
+   ============================================= */
+
+/* Aparece ao scroll (controlado por JavaScript) */
 .scroll-fade-in {
     opacity: 0;
     transform: translateY(30px);
@@ -549,22 +712,30 @@
     transform: translateY(0);
 }
 
+/* Efeito de levantar ao passar o mouse */
 .hover-lift {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .hover-lift:hover {
     transform: translateY(-5px);
+    /* Levanta 5px */
     box-shadow: 0 10px 30px rgba(8, 18, 244, 0.2);
+    /* Sombra azul suave */
 }
 
+/* =============================================
+   ESTADOS DE FOCO - Acessibilidade e UX
+   ============================================= */
 
+/* Indicadores visuais para foco (teclado/tab) */
 .btn-primary:focus,
 .btn-secondary:focus,
 .btn-plan:focus,
 .btn-login-submit:focus {
     outline: none;
     box-shadow: 0 0 0 3px rgba(8, 18, 244, 0.3);
+    /* Glow azul */
 }
 
 .form-group input:focus {
