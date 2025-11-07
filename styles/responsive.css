@@ -1,32 +1,28 @@
 /* =============================================
-   TABLETS - Telas até 1024px (iPad, tablets grandes)
+   TABLETS - Telas até 1024px
    ============================================= */
 
 @media (max-width: 1024px) {
     .hero-content h1 {
         font-size: 2.8rem;
-        /* Reduz um pouco o título hero */
     }
 
     .hero-container {
         gap: 2rem;
-        /* Menos espaço entre conteúdo e imagem */
     }
 
     .section-title {
         font-size: 2.2rem;
-        /* Títulos de seção um pouco menores */
     }
 
     .login-container {
         grid-template-columns: 1fr;
-        /* Login vira uma coluna só */
         gap: 3rem;
     }
 }
 
 /* =============================================
-   TABLETS PEQUENAS E MOBILE - Telas até 768px (iPad Mini, smartphones grandes)
+   TABLETS PEQUENAS E MOBILE - Telas até 768px
    ============================================= */
 
 @media (max-width: 768px) {
@@ -34,36 +30,26 @@
     /* ========== MENU MOBILE ========== */
     .nav-menu {
         position: fixed;
-        /* Menu fica fixo na tela */
         left: -100%;
-        /* Começa fora da tela (esquerda) */
         top: 0;
-        /* Abaixo do header */
         flex-direction: column;
-        /* Itens em coluna (um embaixo do outro) */
         background: var(--white);
         width: 100%;
-        /* Ocupa toda a largura */
         height: 100vh;
         text-align: center;
         transition: 0.3s;
-        /* Animação suave de entrada/saída */
         box-shadow: var(--shadow);
-        /* Sombra para destacar */
         padding: 100px 0;
         gap: 2rem;
         z-index: 999;
     }
 
-    /* Quando o menu está ativo (hamburger clicado) */
     .nav-menu.active {
         left: 0;
-        /* Volta para a posição normal (dentro da tela) */
     }
 
     .nav-menu li {
         margin: 0;
-        /* Remove margem padrão */
     }
 
     .nav-menu a {
@@ -74,63 +60,50 @@
 
     .hamburger {
         display: flex;
-        /* Mostra o ícone hamburger (estava escondido no desktop) */
         z-index: 1000;
     }
 
-    /* ========== ANIMAÇÃO DO HAMBURGER ========== */
-    /* Transforma as 3 linhas no "X" quando ativo */
     .hamburger.active span:nth-child(2) {
         opacity: 0;
-        /* Linha do meio some */
     }
 
     .hamburger.active span:nth-child(1) {
         transform: translateY(8px) rotate(45deg);
-        /* Linha de cima vira \ */
     }
 
     .hamburger.active span:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
-        /* Linha de baixo vira / */
     }
 
     /* ========== HERO SECTION ========== */
     .hero-container {
         grid-template-columns: 1fr;
-        /* Uma coluna só (imagem abaixo do texto) */
         text-align: center;
-        /* Texto centralizado */
         gap: 3rem;
     }
 
     .hero-content h1 {
         font-size: 2.5rem;
-        /* Título ainda menor */
     }
 
     .hero-buttons {
         justify-content: center;
-        /* Botões centralizados */
         flex-direction: column;
         align-items: center;
     }
 
     .section-title {
         font-size: 2rem;
-        /* Títulos de seção menores */
     }
 
     /* ========== ARTIST SHOWCASE ========== */
     .artist-showcase {
         grid-template-columns: 1fr;
-        /* Artistas em uma coluna só */
         gap: 1.5rem;
     }
 
     #ariana {
         grid-column: 1;
-        /* Ariana ocupa apenas uma coluna (não mais duas) */
         min-height: 200px;
     }
 
@@ -142,7 +115,6 @@
     /* ========== SEÇÃO DE ARTISTAS ========== */
     .artists-grid {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        /* Cards menores */
         gap: 1.5rem;
     }
 
@@ -158,18 +130,15 @@
     /* ========== SEÇÃO DE PLANOS ========== */
     .plans-grid {
         grid-template-columns: 1fr;
-        /* Planos em uma coluna */
         gap: 2rem;
     }
 
     .plan-card.popular {
         transform: none;
-        /* Remove o destaque de escala no mobile */
     }
 
     .plan-card.popular:hover {
         transform: translateY(-8px);
-        /* Mantém apenas o efeito de levantar */
     }
 
     .plan-card {
@@ -187,14 +156,12 @@
 
     .feature-highlight {
         flex-direction: column;
-        /* Ícone e texto em coluna */
         text-align: center;
         padding: 1.5rem;
     }
 
     .feature-highlight:hover {
         transform: translateY(-5px);
-        /* Efeito de levantar no hover */
     }
 
     .form-options {
@@ -205,7 +172,7 @@
 }
 
 /* =============================================
-   SMARTPHONES PEQUENOS - Telas até 480px (iPhone SE, smartphones pequenos)
+   SMARTPHONES PEQUENOS - Telas até 480px
    ============================================= */
 
 @media (max-width: 480px) {
@@ -213,18 +180,15 @@
     /* ========== AJUSTES GERAIS ========== */
     .container {
         padding: 0 15px;
-        /* Menos padding nas laterais */
     }
 
     /* ========== HERO SECTION ========== */
     .hero {
         padding: 100px 0 60px;
-        /* Menos padding vertical */
     }
 
     .hero-content h1 {
         font-size: 2rem;
-        /* Título ainda menor */
     }
 
     .hero-content p {
@@ -234,7 +198,6 @@
     .btn-primary,
     .btn-secondary {
         padding: 0.8rem 1.5rem;
-        /* Botões menores */
         font-size: 0.9rem;
     }
 
@@ -251,13 +214,11 @@
     .artists,
     .plans {
         padding: 60px 0;
-        /* Menos padding nas seções */
     }
 
     /* ========== ARTISTAS ========== */
     .artists-grid {
         grid-template-columns: 1fr;
-        /* Uma coluna só */
         gap: 1rem;
     }
 
@@ -316,7 +277,6 @@
 
     .language-switcher {
         display: none;
-        /* Esconde seletor de idioma em telas muito pequenas */
     }
 }
 
@@ -337,7 +297,6 @@
 
     .nav-menu {
         padding: 80px 0;
-        /* Menu mais compacto */
     }
 }
 
@@ -347,16 +306,13 @@
 
 @media (-webkit-min-device-pixel-ratio: 2),
 (min-resolution: 192dpi) {
-
-    /* Imagens e elementos podem ter versões de maior resolução aqui */
     .logo i {
         -webkit-font-smoothing: antialiased;
-        /* Melhor renderização de fontes */
     }
 }
 
 /* =============================================
-   IMPRESSÃO - Estilos para quando a página for impressa
+   IMPRESSÃO
    ============================================= */
 
 @media print {
@@ -367,7 +323,6 @@
     .btn-secondary,
     .btn-plan {
         display: none !important;
-        /* Remove elementos não essenciais */
     }
 
     body {

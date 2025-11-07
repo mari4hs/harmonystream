@@ -1,99 +1,67 @@
 /* =============================================
-   RESET E CONFIGURAÇÕES GERAIS - Base sólida para todos os estilos
+   RESET E CONFIGURAÇÕES GERAIS
    ============================================= */
 
-/* Reset CSS - remove estilos padrão dos navegadores */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* Padding e border contam na largura/altura */
 }
 
-/* Variáveis CSS (Custom Properties) - Sistema de design consistente */
 :root {
     /* ========== PALETA DE CORES PRINCIPAL ========== */
     --primary-color: #0812F4;
-    /* Azul principal - cor da marca */
     --primary-light: #322CF7;
-    /* Azul mais claro */
     --secondary-color: #5B45FA;
-    /* Azul secundário */
     --accent-color: #855FFC;
-    /* Roxo azulado */
     --highlight-color: #AE78FF;
-    /* Roxo claro - destaque */
 
     /* ========== CORES NEUTRAS ========== */
     --text-dark: #1a1a2e;
-    /* Texto escuro (títulos) */
     --text-light: #4a4a6a;
-    /* Texto claro (parágrafos) */
     --bg-light: #f8f9ff;
-    /* Fundo claro das seções */
     --white: #ffffff;
-    /* Branco puro */
     --gray-light: #e6e9ff;
-    /* Cinza azulado claro (bordas) */
 
     /* ========== EFEITOS VISUAIS ========== */
     --shadow: 0 4px 20px rgba(8, 18, 244, 0.15);
-    /* Sombra suave azul */
     --gradient: linear-gradient(135deg, var(--primary-color), var(--highlight-color));
-
-    /* ========== GRADIENTES ESPECÍFICOS ========== */
     --gradient-primary: linear-gradient(135deg, #0812F4, #322CF7);
     --gradient-secondary: linear-gradient(135deg, #5B45FA, #855FFC);
     --gradient-accent: linear-gradient(135deg, #855FFC, #AE78FF);
 }
 
-/* Estilos base do corpo da página */
 body {
     font-family: 'Montserrat', sans-serif;
-    /* Fonte moderna e legível */
     line-height: 1.6;
-    /* Espaçamento entre linhas */
     color: var(--text-dark);
-    /* Cor do texto padrão */
     overflow-x: hidden;
-    /* Remove scroll horizontal */
     background: var(--white);
-    /* Fundo branco */
 }
 
-/* Container principal - centraliza o conteúdo */
 .container {
     max-width: 1200px;
-    /* Largura máxima do conteúdo */
     margin: 0 auto;
-    /* Centraliza horizontalmente */
     padding: 0 20px;
-    /* Espaço nas laterais em mobile */
 }
 
 /* =============================================
-   HEADER E NAVEGAÇÃO - Menu superior fixo
+   HEADER E NAVEGAÇÃO
    ============================================= */
 
 .header {
     position: fixed;
-    /* Fica fixo no topo ao rolar */
     top: 0;
     width: 100%;
     background: rgba(255, 255, 255, 0.98);
-    /* Branco semi-transparente */
     backdrop-filter: blur(10px);
-    /* Efeito de desfoque no fundo */
     z-index: 1000;
-    /* Fica acima de todo o conteúdo */
     transition: all 0.3s ease;
-    /* Transição suave para efeitos */
     border-bottom: 1px solid var(--gray-light);
 }
 
 .navbar {
     padding: 1rem 0;
-    /* Espaço vertical interno */
 }
 
 .nav-container {
@@ -102,18 +70,15 @@ body {
     padding: 0 20px;
     display: flex;
     justify-content: space-between;
-    /* Logo à esquerda, menu à direita */
     align-items: center;
 }
 
-/* Logo da marca */
 .logo {
     display: flex;
     align-items: center;
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--primary-color);
-    /* Azul da marca */
     z-index: 1001;
 }
 
@@ -125,18 +90,14 @@ body {
 .logo a {
     text-decoration: none;
     color: inherit;
-    /* Herda a cor do elemento pai */
     display: flex;
     align-items: center;
 }
 
-/* Menu de navegação principal */
 .nav-menu {
     display: flex;
     list-style: none;
-    /* Remove bolinhas da lista */
     gap: 2rem;
-    /* Espaço entre itens do menu */
     align-items: center;
 }
 
@@ -145,49 +106,41 @@ body {
     color: var(--text-dark);
     font-weight: 500;
     transition: color 0.3s ease;
-    /* Transição suave da cor */
 }
 
 .nav-menu a:hover {
     color: var(--primary-color);
-    /* Azul no hover */
 }
 
-/* Botão de login especial */
 .btn-login {
     background: var(--gradient-primary);
     color: white !important;
-    /* !important para sobrescrever outros estilos */
     padding: 0.5rem 1.5rem;
     border-radius: 25px;
-    /* Bordas totalmente arredondadas */
     transition: all 0.3s ease;
     border: none;
     font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
 }
 
 .btn-login:hover {
     transform: translateY(-2px);
-    /* Efeito de levantar */
     box-shadow: 0 6px 20px rgba(8, 18, 244, 0.3);
-    /* Sombra azul */
 }
 
-/* Container dos botões de ação (idioma, hamburger) */
 .nav-actions {
     display: flex;
     align-items: center;
     gap: 1rem;
 }
 
-/* Seletor de idioma */
 .language-switcher {
     display: flex;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 25px;
     padding: 0.25rem;
     backdrop-filter: blur(10px);
-    /* Efeito de vidro fosco */
 }
 
 .language-btn {
@@ -206,10 +159,8 @@ body {
     color: white;
 }
 
-/* Ícone hamburger (visível apenas em mobile) */
 .hamburger {
     display: none;
-    /* Escondido no desktop */
     flex-direction: column;
     cursor: pointer;
     z-index: 1001;
@@ -221,29 +172,23 @@ body {
     background: var(--text-dark);
     margin: 3px 0;
     transition: 0.3s;
-    /* Animação suave */
 }
 
 /* =============================================
-   HERO SECTION - Primeira impressão do usuário
+   HERO SECTION
    ============================================= */
 
 .hero {
     padding: 120px 0 80px;
-    /* Espaço para o header fixo */
     background: var(--gradient);
-    /* Fundo gradiente azul-roxo */
     color: var(--white);
     min-height: 100vh;
-    /* Ocupa pelo menos a tela toda */
     display: flex;
     align-items: center;
     position: relative;
     overflow: hidden;
-    /* Esconde elementos que saem da tela */
 }
 
-/* Elemento decorativo de fundo */
 .hero::before {
     content: '';
     position: absolute;
@@ -253,7 +198,6 @@ body {
     bottom: 0;
     background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="%230812F4" points="0,0 1000,0 1000,1000"/><polygon fill="%23AE78FF" points="0,0 0,1000 1000,1000"/></svg>');
     opacity: 0.1;
-    /* Muito transparente - efeito sutil */
 }
 
 .hero-container {
@@ -262,12 +206,10 @@ body {
     padding: 0 20px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    /* Texto e imagem lado a lado */
     gap: 4rem;
     align-items: center;
     position: relative;
     z-index: 2;
-    /* Fica acima do elemento decorativo */
 }
 
 .hero-content h1 {
@@ -275,21 +217,18 @@ body {
     font-weight: 700;
     margin-bottom: 1.5rem;
     line-height: 1.2;
-    /* Espaçamento confortável entre linhas */
 }
 
 .hero-content p {
     font-size: 1.2rem;
     margin-bottom: 2rem;
     opacity: 0.9;
-    /* Texto levemente transparente */
 }
 
 .hero-buttons {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
-    /* Quebra linha se necessário */
 }
 
 /* ========== BOTÕES PRINCIPAIS ========== */
@@ -298,14 +237,12 @@ body {
     padding: 1rem 2rem;
     border: none;
     border-radius: 50px;
-    /* Completely rounded */
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
-    /* Para efeitos internos (como ripple) */
 }
 
 .btn-primary {
@@ -334,13 +271,12 @@ body {
 }
 
 /* =============================================
-   ARTIST SHOWCASE - Grid de artistas no hero
+   ARTIST SHOWCASE
    ============================================= */
 
 .artist-showcase {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    /* 2 colunas */
     gap: 1rem;
     position: relative;
 }
@@ -349,49 +285,45 @@ body {
     position: relative;
     border-radius: 20px;
     overflow: hidden;
-    /* Imagem não sai do card */
     min-height: 200px;
     transition: all 0.3s ease;
-    /* Efeito de loading animado */
     background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
     background-size: 200% 100%;
     animation: loading 1.5s infinite;
+}
+
+.artist-card.loaded {
+    background: none;
+    animation: none;
 }
 
 .artist-card img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* Preenche o espaço sem distorcer */
     transition: transform 0.3s ease;
 }
 
-/* Overlay com informações que aparece no hover */
 .artist-overlay {
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
     background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
-    /* Gradiente escuro */
     padding: 2rem 1.5rem 1.5rem;
     color: white;
     transform: translateY(10px);
-    /* Começa levemente para baixo */
     opacity: 0;
     transition: all 0.3s ease;
 }
 
 .artist-card:hover .artist-overlay {
     transform: translateY(0);
-    /* Volta à posição normal */
     opacity: 1;
-    /* Torna-se visível */
 }
 
 .artist-card:hover img {
     transform: scale(1.05);
-    /* Zoom suave na imagem */
 }
 
 .artist-info h3 {
@@ -405,10 +337,8 @@ body {
     opacity: 0.9;
 }
 
-/* Ariana ocupa 2 colunas (destaque maior) */
 #ariana {
     grid-column: 1 / 3;
-    /* Ocupa da coluna 1 à 3 (2 colunas) */
     min-height: 250px;
 }
 
@@ -418,7 +348,7 @@ body {
 }
 
 /* =============================================
-   SEÇÕES GERAIS - Estilos compartilhados
+   SEÇÕES GERAIS
    ============================================= */
 
 .section-title {
@@ -437,19 +367,17 @@ body {
 }
 
 /* =============================================
-   SEÇÃO DE ARTISTAS - Grid de artistas em destaque
+   SEÇÃO DE ARTISTAS
    ============================================= */
 
 .artists {
     padding: 80px 0;
     background: var(--bg-light);
-    /* Fundo cinza azulado claro */
 }
 
 .artists-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    /* Grid responsivo */
     gap: 2rem;
     margin-top: 3rem;
 }
@@ -466,9 +394,7 @@ body {
 
 .artist-featured:hover {
     transform: translateY(-10px);
-    /* Efeito de levantar */
     box-shadow: 0 25px 50px rgba(8, 18, 244, 0.15);
-    /* Sombra mais intensa */
 }
 
 .artist-img {
@@ -476,24 +402,26 @@ body {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    /* Imagem circular */
     margin: 0 auto 1.5rem;
     overflow: hidden;
     box-shadow: 0 15px 35px rgba(8, 18, 244, 0.2);
-    /* Sombra azul */
-    /* Efeito de loading */
     background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
     background-size: 200% 100%;
     animation: loading 1.5s infinite;
+}
+
+.artist-img.loaded {
+    background: none;
+    animation: none;
 }
 
 .artist-img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: all 0.3s ease;
 }
 
-/* Overlay de play que aparece no hover */
 .play-overlay {
     position: absolute;
     top: 0;
@@ -501,33 +429,28 @@ body {
     width: 100%;
     height: 100%;
     background: rgba(8, 18, 244, 0.8);
-    /* Azul semi-transparente */
     display: flex;
     align-items: center;
     justify-content: center;
     opacity: 0;
     transition: opacity 0.3s ease;
     border-radius: 50%;
-    /* Circular como a imagem */
     cursor: pointer;
 }
 
 .artist-img:hover .play-overlay {
     opacity: 1;
-    /* Torna-se visível no hover */
 }
 
 .play-overlay i {
     color: white;
     font-size: 2.5rem;
     transform: scale(0.8);
-    /* Começa um pouco menor */
     transition: transform 0.3s ease;
 }
 
 .artist-img:hover .play-overlay i {
     transform: scale(1);
-    /* Volta ao tamanho normal */
 }
 
 .artist-featured h3 {
@@ -543,14 +466,12 @@ body {
     margin-bottom: 1rem;
 }
 
-/* Tags dos artistas (gêneros musicais) */
 .artist-tags {
     display: flex;
     justify-content: center;
     gap: 0.5rem;
     margin-top: 1rem;
     flex-wrap: wrap;
-    /* Quebra linha se necessário */
 }
 
 .artist-tags span {
@@ -558,13 +479,12 @@ body {
     color: white;
     padding: 0.4rem 1rem;
     border-radius: 20px;
-    /* Completely rounded */
     font-size: 0.8rem;
     font-weight: 500;
 }
 
 /* =============================================
-   SEÇÃO DE PLANOS - Cards de assinatura
+   SEÇÃO DE PLANOS
    ============================================= */
 
 .plans {
@@ -575,7 +495,6 @@ body {
 .plans-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    /* Grid responsivo */
     gap: 2rem;
     margin-top: 3rem;
 }
@@ -592,32 +511,24 @@ body {
 
 .plan-card:hover {
     transform: translateY(-8px);
-    /* Efeito de levantar */
     box-shadow: 0 25px 50px rgba(8, 18, 244, 0.15);
 }
 
-/* Plano popular com destaque especial */
 .plan-card.popular {
     border-color: var(--primary-color);
-    /* Borda azul */
     transform: scale(1.05);
-    /* Um pouco maior */
     background: linear-gradient(135deg, #f8f9ff, var(--white));
-    /* Gradiente sutil */
 }
 
 .plan-card.popular:hover {
     transform: scale(1.05) translateY(-8px);
-    /* Combina scale e translate */
 }
 
-/* Badge "Mais Popular" */
 .popular-badge {
     position: absolute;
     top: -12px;
     left: 50%;
     transform: translateX(-50%);
-    /* Centraliza horizontalmente */
     background: var(--gradient);
     color: var(--white);
     padding: 0.6rem 2rem;
@@ -644,7 +555,6 @@ body {
 .plan-price {
     display: flex;
     align-items: baseline;
-    /* Alinha pela base do texto */
     justify-content: center;
     gap: 0.5rem;
 }
@@ -654,9 +564,7 @@ body {
     font-weight: 700;
     background: var(--gradient);
     -webkit-background-clip: text;
-    /* Faz o gradiente aparecer só no texto */
     -webkit-text-fill-color: transparent;
-    /* Texto transparente para ver o gradiente */
     background-clip: text;
 }
 
@@ -687,15 +595,12 @@ body {
 
 .plan-features .fa-check {
     color: #10b981;
-    /* Verde para recursos incluídos */
 }
 
 .plan-features .fa-times {
     color: #ef4444;
-    /* Vermelho para recursos não incluídos */
 }
 
-/* Botões dos planos */
 .btn-plan {
     width: 100%;
     padding: 1.2rem;
@@ -730,7 +635,7 @@ body {
 }
 
 /* =============================================
-   FOOTER - Rodapé da página
+   FOOTER
    ============================================= */
 
 .footer {
@@ -740,7 +645,6 @@ body {
     position: relative;
 }
 
-/* Linha decorativa no topo do footer */
 .footer::before {
     content: '';
     position: absolute;
@@ -755,7 +659,6 @@ body {
     text-align: center;
     padding: 2rem 0;
     color: rgba(255, 255, 255, 0.7);
-    /* Texto semi-transparente */
     font-size: 0.9rem;
 }
 
@@ -764,10 +667,9 @@ body {
 }
 
 /* =============================================
-   ANIMAÇÕES - Keyframes e efeitos
+   ANIMAÇÕES
    ============================================= */
 
-/* Animação de loading (shimmer effect) */
 @keyframes loading {
     0% {
         background-position: 200% 0;
@@ -776,13 +678,6 @@ body {
     100% {
         background-position: -200% 0;
     }
-}
-
-/* Remove animação de loading quando as imagens carregam */
-.artist-card.loaded,
-.artist-img.loaded {
-    background: none;
-    animation: none;
 }
 
 /* =============================================
@@ -800,13 +695,11 @@ body {
     justify-content: center;
     min-height: 100vh;
     padding: 100px 20px 50px;
-    /* Espaço para o header */
 }
 
 .login-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    /* Formulário e features lado a lado */
     gap: 4rem;
     max-width: 1200px;
     width: 100%;
@@ -818,7 +711,6 @@ body {
     padding: 3rem;
     border-radius: 20px;
     box-shadow: 0 20px 60px rgba(8, 18, 244, 0.3);
-    /* Sombra intensa */
 }
 
 .login-header {
@@ -847,7 +739,6 @@ body {
     color: var(--text-light);
 }
 
-/* Formulário */
 .form-group {
     position: relative;
     margin-bottom: 1.5rem;
@@ -1068,7 +959,6 @@ body {
     text-decoration: underline;
 }
 
-/* Features do login (lado direito) */
 .login-features {
     color: var(--white);
 }
@@ -1099,6 +989,16 @@ body {
     justify-content: center;
     font-size: 1.5rem;
     flex-shrink: 0;
+}
+
+.feature-content h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.feature-content p {
+    opacity: 0.9;
+    font-size: 0.9rem;
 }
 
 /* =============================================

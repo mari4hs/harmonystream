@@ -7,7 +7,7 @@
     <title>HarmonyStream - Sua Música, Sua Emoção</title>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="faviconh.PNG">
+    <link rel="icon" type="image/png" href="assets/faviconh.PNG">
 
     <!-- Estilos -->
     <link rel="stylesheet" href="styles/style.css">
@@ -37,8 +37,10 @@
         <nav class="navbar">
             <div class="nav-container">
                 <div class="logo">
-                    <i class="fas fa-music"></i>
-                    <span>HarmonyStream</span>
+                    <a href="#home">
+                        <i class="fas fa-music"></i>
+                        <span>HarmonyStream</span>
+                    </a>
                 </div>
                 <ul class="nav-menu">
                     <li><a href="#home" data-translate="nav.home">Início</a></li>
@@ -69,14 +71,16 @@
                 <p class="fade-in-up delay-1" data-translate="hero.subtitle">Milhões de músicas. Zero anúncios. A
                     experiência musical definitiva.</p>
                 <div class="hero-buttons fade-in-up delay-2">
-                    <button class="btn-primary" data-translate="hero.trial">Começar teste grátis</button>
-                    <button class="btn-secondary" data-translate="hero.plans">Ver planos</button>
+                    <button class="btn-primary" id="btn-free-trial" data-translate="hero.trial">Começar teste
+                        grátis</button>
+                    <button class="btn-secondary" id="btn-see-plans" data-translate="hero.plans">Ver planos</button>
                 </div>
             </div>
             <div class="hero-image">
                 <div class="artist-showcase">
                     <div class="artist-card fade-in-right" id="ariana">
-                        <img src="assets/images/ariana-grande.jpg" alt="Ariana Grande" loading="lazy">
+                        <img src="assets/ariana-grande.jpg" alt="Ariana Grande" loading="lazy"
+                            onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMzIyY2Y3Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtc2l6ZT0iMjQiIGZpbGw9IiNmZmYiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+QXJpYW5hIEdyYW5kZTwvdGV4dD48L3N2Zz4='">
                         <div class="artist-overlay">
                             <div class="artist-info">
                                 <h3 data-translate="artists.ariana.name">Ariana Grande</h3>
@@ -85,7 +89,8 @@
                         </div>
                     </div>
                     <div class="artist-card fade-in-up delay-1" id="sabrina">
-                        <img src="assets/images/sabrina-carpenter.jpg" alt="Sabrina Carpenter" loading="lazy">
+                        <img src="assets/sabrina-carpenter.jpg" alt="Sabrina Carpenter" loading="lazy"
+                            onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjNWI0NWZhIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtc2l6ZT0iMjQiIGZpbGw9IiNmZmYiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+U2FicmluYSBDYXJwZW50ZXI8L3RleHQ+PC9zdmc+'">
                         <div class="artist-overlay">
                             <div class="artist-info">
                                 <h3 data-translate="artists.sabrina.name">Sabrina Carpenter</h3>
@@ -94,7 +99,8 @@
                         </div>
                     </div>
                     <div class="artist-card fade-in-up delay-2" id="nessa">
-                        <img src="assets/images/nessa-barrett.jpg" alt="Nessa Barrett" loading="lazy">
+                        <img src="assets/nessa-barrett.jpg" alt="Nessa Barrett" loading="lazy"
+                            onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjODU1ZmZjIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtc2l6ZT0iMjQiIGZpbGw9IiNmZmYiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+TmVzc2EgQmFycmV0dDwvdGV4dD48L3N2Zz4='">
                         <div class="artist-overlay">
                             <div class="artist-info">
                                 <h3 data-translate="artists.nessa.name">Nessa Barrett</h3>
@@ -114,7 +120,8 @@
             <div class="artists-grid">
                 <div class="artist-featured fade-in-up">
                     <div class="artist-img">
-                        <img src="assets/images/artists/ariana-featured.jpg" alt="Ariana Grande" loading="lazy">
+                        <img src="assets/ariana-featured.jpg" alt="Ariana Grande" loading="lazy"
+                            onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMzIyY2Y3Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiNmZmYiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+QTwvdGV4dD48L3N2Zz4='">
                         <div class="play-overlay">
                             <i class="fas fa-play"></i>
                         </div>
@@ -128,7 +135,8 @@
                 </div>
                 <div class="artist-featured fade-in-up delay-1">
                     <div class="artist-img">
-                        <img src="assets/images/artists/sabrina-featured.jpg" alt="Sabrina Carpenter" loading="lazy">
+                        <img src="assets/sabrina-featured.jpg" alt="Sabrina Carpenter" loading="lazy"
+                            onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjNWI0NWZhIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiNmZmYiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+UzwvdGV4dD48L3N2Zz4='">
                         <div class="play-overlay">
                             <i class="fas fa-play"></i>
                         </div>
@@ -142,7 +150,8 @@
                 </div>
                 <div class="artist-featured fade-in-up delay-2">
                     <div class="artist-img">
-                        <img src="assets/images/artists/nessa-featured.jpg" alt="Nessa Barrett" loading="lazy">
+                        <img src="assets/nessa-featured.jpg" alt="Nessa Barrett" loading="lazy"
+                            onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjODU1ZmZjIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiNmZmYiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+TjwvdGV4dD48L3N2Zz4='">
                         <div class="play-overlay">
                             <i class="fas fa-play"></i>
                         </div>
@@ -156,7 +165,8 @@
                 </div>
                 <div class="artist-featured fade-in-up delay-3">
                     <div class="artist-img">
-                        <img src="assets/images/artists/taylor-featured.jpg" alt="Taylor Swift" loading="lazy">
+                        <img src="assets/taylor-featured.jpg" alt="Taylor Swift" loading="lazy"
+                            onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjYWU3OGZmIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiNmZmYiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+VDwvdGV4dD48L3N2Zz4='">
                         <div class="play-overlay">
                             <i class="fas fa-play"></i>
                         </div>
