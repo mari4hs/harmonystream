@@ -114,6 +114,7 @@ body {
     font-weight: 700;
     color: var(--primary-color);
     /* Azul da marca */
+    z-index: 1001;
 }
 
 .logo i {
@@ -136,6 +137,7 @@ body {
     /* Remove bolinhas da lista */
     gap: 2rem;
     /* Espaço entre itens do menu */
+    align-items: center;
 }
 
 .nav-menu a {
@@ -210,6 +212,7 @@ body {
     /* Escondido no desktop */
     flex-direction: column;
     cursor: pointer;
+    z-index: 1001;
 }
 
 .hamburger span {
@@ -782,8 +785,6 @@ body {
     animation: none;
 }
 
-/* [O restante do CSS continua similarmente documentado...] */
-
 /* =============================================
    ESTILOS ESPECÍFICOS DA PÁGINA DE LOGIN
    ============================================= */
@@ -820,7 +821,252 @@ body {
     /* Sombra intensa */
 }
 
-/* [Estilos do formulário de login...] */
+.login-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.login-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.login-header h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+}
+
+.login-header p {
+    color: var(--text-light);
+}
+
+/* Formulário */
+.form-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 1rem 3rem 1rem 1rem;
+    border: 2px solid var(--gray-light);
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: var(--white);
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(8, 18, 244, 0.1);
+}
+
+.input-icon {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-light);
+}
+
+.toggle-password {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--text-light);
+    cursor: pointer;
+    z-index: 2;
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.checkbox-container input {
+    display: none;
+}
+
+.checkmark {
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--gray-light);
+    border-radius: 4px;
+    margin-right: 0.5rem;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.checkbox-container input:checked+.checkmark {
+    background: var(--gradient);
+    border-color: transparent;
+}
+
+.checkbox-container input:checked+.checkmark::after {
+    content: '✓';
+    position: absolute;
+    color: white;
+    font-size: 12px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.forgot-password {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+.btn-login-submit {
+    width: 100%;
+    padding: 1rem;
+    background: var(--gradient);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-login-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(8, 18, 244, 0.4);
+}
+
+.btn-login-submit:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.btn-text {
+    transition: opacity 0.3s ease;
+}
+
+.btn-loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-divider {
+    text-align: center;
+    margin: 2rem 0;
+    position: relative;
+}
+
+.login-divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--gray-light);
+}
+
+.login-divider span {
+    background: var(--white);
+    padding: 0 1rem;
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.social-login {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.btn-social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    border: 2px solid var(--gray-light);
+    background: var(--white);
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-social:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.btn-social.google:hover {
+    border-color: #DB4437;
+}
+
+.btn-social.apple:hover {
+    border-color: #000000;
+}
+
+.login-footer {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--gray-light);
+}
+
+.login-footer p {
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+}
+
+.signup-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.signup-link:hover {
+    text-decoration: underline;
+}
 
 /* Features do login (lado direito) */
 .login-features {
@@ -834,16 +1080,13 @@ body {
     margin-bottom: 2rem;
     padding: 1.5rem;
     background: rgba(255, 255, 255, 0.1);
-    /* Fundo semi-transparente */
     border-radius: 15px;
     backdrop-filter: blur(10px);
-    /* Efeito de vidro fosco */
     transition: transform 0.3s ease;
 }
 
 .feature-highlight:hover {
     transform: translateX(10px);
-    /* Move para a direita no hover */
 }
 
 .feature-highlight .feature-icon {
@@ -856,7 +1099,6 @@ body {
     justify-content: center;
     font-size: 1.5rem;
     flex-shrink: 0;
-    /* Impede que o ícone encolha */
 }
 
 /* =============================================
@@ -869,7 +1111,6 @@ body {
 .btn-login-submit:focus {
     outline: none;
     box-shadow: 0 0 0 3px rgba(8, 18, 244, 0.3);
-    /* Glow azul para foco */
 }
 
 .form-group input:focus {

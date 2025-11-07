@@ -13,12 +13,6 @@
         /* Menos espaço entre conteúdo e imagem */
     }
 
-    .footer-content {
-        grid-template-columns: 1fr 1fr;
-        /* Footer em 2 colunas ao invés de 4 */
-        gap: 2rem;
-    }
-
     .section-title {
         font-size: 2.2rem;
         /* Títulos de seção um pouco menores */
@@ -43,20 +37,22 @@
         /* Menu fica fixo na tela */
         left: -100%;
         /* Começa fora da tela (esquerda) */
-        top: 70px;
+        top: 0;
         /* Abaixo do header */
         flex-direction: column;
         /* Itens em coluna (um embaixo do outro) */
         background: var(--white);
         width: 100%;
         /* Ocupa toda a largura */
+        height: 100vh;
         text-align: center;
         transition: 0.3s;
         /* Animação suave de entrada/saída */
         box-shadow: var(--shadow);
         /* Sombra para destacar */
-        padding: 2rem 0;
-        gap: 0;
+        padding: 100px 0;
+        gap: 2rem;
+        z-index: 999;
     }
 
     /* Quando o menu está ativo (hamburger clicado) */
@@ -66,13 +62,20 @@
     }
 
     .nav-menu li {
-        margin: 1rem 0;
-        /* Espaçamento entre itens do menu */
+        margin: 0;
+        /* Remove margem padrão */
+    }
+
+    .nav-menu a {
+        font-size: 1.2rem;
+        padding: 1rem 2rem;
+        display: block;
     }
 
     .hamburger {
         display: flex;
         /* Mostra o ícone hamburger (estava escondido no desktop) */
+        z-index: 1000;
     }
 
     /* ========== ANIMAÇÃO DO HAMBURGER ========== */
@@ -109,6 +112,8 @@
     .hero-buttons {
         justify-content: center;
         /* Botões centralizados */
+        flex-direction: column;
+        align-items: center;
     }
 
     .section-title {
@@ -116,10 +121,50 @@
         /* Títulos de seção menores */
     }
 
-    /* ========== PLANOS ========== */
+    /* ========== ARTIST SHOWCASE ========== */
+    .artist-showcase {
+        grid-template-columns: 1fr;
+        /* Artistas em uma coluna só */
+        gap: 1.5rem;
+    }
+
+    #ariana {
+        grid-column: 1;
+        /* Ariana ocupa apenas uma coluna (não mais duas) */
+        min-height: 200px;
+    }
+
+    #sabrina,
+    #nessa {
+        min-height: 160px;
+    }
+
+    /* ========== SEÇÃO DE ARTISTAS ========== */
+    .artists-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        /* Cards menores */
+        gap: 1.5rem;
+    }
+
+    .artist-featured {
+        padding: 2rem 1.5rem;
+    }
+
+    .artist-img {
+        width: 120px;
+        height: 120px;
+    }
+
+    /* ========== SEÇÃO DE PLANOS ========== */
+    .plans-grid {
+        grid-template-columns: 1fr;
+        /* Planos em uma coluna */
+        gap: 2rem;
+    }
+
     .plan-card.popular {
-        transform: scale(1);
-        /* Remove o destaque de escala no popular */
+        transform: none;
+        /* Remove o destaque de escala no mobile */
     }
 
     .plan-card.popular:hover {
@@ -127,154 +172,215 @@
         /* Mantém apenas o efeito de levantar */
     }
 
-    /* ========== SHOWCASE DE ARTISTAS ========== */
-    .artist-showcase {
-        grid-template-columns: 1fr;
-        /* Artistas em uma coluna só */
+    .plan-card {
+        padding: 2rem;
     }
 
-    #ariana {
-        grid-column: 1;
-        /* Ariana ocupa apenas uma coluna (não mais duas) */
+    /* ========== LOGIN PAGE ========== */
+    .login-card {
+        padding: 2rem;
     }
 
-    /* ========== FOOTER ========== */
-    .footer-content {
-        grid-template-columns: 1fr;
-        /* Footer em uma coluna só */
+    .login-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .feature-highlight {
+        flex-direction: column;
+        /* Ícone e texto em coluna */
         text-align: center;
+        padding: 1.5rem;
     }
 
-    .social-links {
-        justify-content: center;
-        /* Ícones sociais centralizados */
+    .feature-highlight:hover {
+        transform: translateY(-5px);
+        /* Efeito de levantar no hover */
     }
 
-    /* ========== LOGIN ========== */
-    .login-container {
-        grid-template-columns: 1fr;
-        /* Formulário e features em coluna */
-        gap: 2rem;
-    }
-
-    .login-features {
-        order: -1;
-        /* Features aparecem ANTES do formulário (acima) */
-    }
-
-    /* ========== HEADER ========== */
-    .nav-actions {
-        gap: 0.5rem;
-        /* Menos espaço entre botões de idioma e hamburger */
-    }
-
-    .language-switcher {
-        font-size: 0.9rem;
-        /* Botões de idioma um pouco menores */
+    .form-options {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
     }
 }
 
 /* =============================================
-   MOBILE PEQUENO - Telas até 480px (smartphones menores)
+   SMARTPHONES PEQUENOS - Telas até 480px (iPhone SE, smartphones pequenos)
    ============================================= */
 
 @media (max-width: 480px) {
 
-    /* ========== HERO SECTION ========== */
-    .hero-content h1 {
-        font-size: 2rem;
-        /* Título bem compacto */
-    }
-
-    .hero-content p {
-        font-size: 1rem;
-        /* Texto normal (já está pequeno) */
-    }
-
-    /* ========== BOTÕES ========== */
-    .btn-primary,
-    .btn-secondary {
-        padding: 0.8rem 1.5rem;
-        /* Botões mais compactos */
-        font-size: 0.9rem;
-        /* Texto menor */
-        width: 100%;
-        /* Largura total */
-        max-width: 250px;
-        /* Mas com limite máximo */
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-        /* Botões em coluna (um embaixo do outro) */
-        align-items: center;
-        /* Centralizados */
-    }
-
-    /* ========== TÍTULOS ========== */
-    .section-title {
-        font-size: 1.8rem;
-        /* Títulos ainda menores */
-    }
-
-    /* ========== GRIDS ========== */
-    .plans-grid,
-    .artists-grid,
-    .features-grid {
-        grid-template-columns: 1fr;
-        /* Tudo em uma coluna só */
-    }
-
-    /* ========== FOOTER ========== */
-    .footer-content {
-        grid-template-columns: 1fr;
-        /* Footer em coluna única */
-        gap: 2rem;
-    }
-
-    /* ========== LAYOUT GERAL ========== */
+    /* ========== AJUSTES GERAIS ========== */
     .container {
         padding: 0 15px;
         /* Menos padding nas laterais */
     }
 
-    /* ========== CARDS ========== */
-    .plan-card,
-    .artist-featured,
-    .feature-card {
-        padding: 2rem 1.5rem;
-        /* Menos padding interno nos cards */
+    /* ========== HERO SECTION ========== */
+    .hero {
+        padding: 100px 0 60px;
+        /* Menos padding vertical */
     }
 
-    /* ========== IMAGENS DE ARTISTAS ========== */
+    .hero-content h1 {
+        font-size: 2rem;
+        /* Título ainda menor */
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        padding: 0.8rem 1.5rem;
+        /* Botões menores */
+        font-size: 0.9rem;
+    }
+
+    /* ========== SEÇÕES ========== */
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .section-subtitle {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .artists,
+    .plans {
+        padding: 60px 0;
+        /* Menos padding nas seções */
+    }
+
+    /* ========== ARTISTAS ========== */
+    .artists-grid {
+        grid-template-columns: 1fr;
+        /* Uma coluna só */
+        gap: 1rem;
+    }
+
+    .artist-featured {
+        padding: 1.5rem 1rem;
+    }
+
     .artist-img {
-        width: 120px;
-        /* Imagens menores */
-        height: 120px;
+        width: 100px;
+        height: 100px;
+    }
+
+    /* ========== PLANOS ========== */
+    .plan-card {
+        padding: 1.5rem;
+    }
+
+    .plan-header h3 {
+        font-size: 1.4rem;
+    }
+
+    .price {
+        font-size: 2.2rem;
     }
 
     /* ========== LOGIN ========== */
     .login-card {
-        padding: 2rem 1.5rem;
-        /* Card de login mais compacto */
+        padding: 1.5rem;
     }
 
-    .form-options {
-        flex-direction: column;
-        /* "Lembrar senha" e "Esqueci senha" em coluna */
-        gap: 1rem;
-        align-items: flex-start;
-        /* Alinhados à esquerda */
+    .login-header h1 {
+        font-size: 1.6rem;
     }
 
-    /* ========== BOTÕES DE IDIOMA ========== */
+    .form-group input {
+        padding: 0.8rem 2.5rem 0.8rem 0.8rem;
+    }
+
+    .input-icon,
+    .toggle-password {
+        right: 0.8rem;
+    }
+
+    /* ========== NAVEGAÇÃO ========== */
+    .nav-container {
+        padding: 0 15px;
+    }
+
+    .logo {
+        font-size: 1.3rem;
+    }
+
+    .logo i {
+        font-size: 1.5rem;
+    }
+
     .language-switcher {
-        font-size: 0.8rem;
-        /* Texto ainda menor */
+        display: none;
+        /* Esconde seletor de idioma em telas muito pequenas */
+    }
+}
+
+/* =============================================
+   ORIENTAÇÃO LANDSCAPE - Telas em modo paisagem
+   ============================================= */
+
+@media (max-height: 600px) and (orientation: landscape) {
+    .hero {
+        min-height: auto;
+        padding: 100px 0 60px;
     }
 
-    .language-btn {
-        padding: 0.4rem 0.8rem;
-        /* Botões mais compactos */
+    .login-section {
+        padding: 80px 20px 30px;
+        min-height: auto;
+    }
+
+    .nav-menu {
+        padding: 80px 0;
+        /* Menu mais compacto */
+    }
+}
+
+/* =============================================
+   DISPOSITIVOS DE ALTA DENSIDADE (Retina)
+   ============================================= */
+
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+
+    /* Imagens e elementos podem ter versões de maior resolução aqui */
+    .logo i {
+        -webkit-font-smoothing: antialiased;
+        /* Melhor renderização de fontes */
+    }
+}
+
+/* =============================================
+   IMPRESSÃO - Estilos para quando a página for impressa
+   ============================================= */
+
+@media print {
+
+    .header,
+    .footer,
+    .btn-primary,
+    .btn-secondary,
+    .btn-plan {
+        display: none !important;
+        /* Remove elementos não essenciais */
+    }
+
+    body {
+        color: black;
+        background: white;
+    }
+
+    .hero {
+        background: white !important;
+        color: black !important;
+    }
+
+    .container {
+        max-width: none;
     }
 }
