@@ -46,7 +46,7 @@ body {
 }
 
 /* =============================================
-   HEADER E NAVEGAÇÃO
+   HEADER E NAVEGAÇÃO - CORRIGIDO
    ============================================= */
 
 .header {
@@ -58,10 +58,11 @@ body {
     z-index: 1000;
     transition: all 0.3s ease;
     border-bottom: 1px solid var(--gray-light);
+    padding: 0.5rem 0;
 }
 
 .navbar {
-    padding: 1rem 0;
+    padding: 0;
 }
 
 .nav-container {
@@ -71,12 +72,13 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 60px;
 }
 
 .logo {
     display: flex;
     align-items: center;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 700;
     color: var(--primary-color);
     z-index: 1001;
@@ -84,7 +86,7 @@ body {
 
 .logo i {
     margin-right: 0.5rem;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
 }
 
 .logo a {
@@ -99,6 +101,8 @@ body {
     list-style: none;
     gap: 2rem;
     align-items: center;
+    margin: 0;
+    padding: 0;
 }
 
 .nav-menu a {
@@ -106,6 +110,7 @@ body {
     color: var(--text-dark);
     font-weight: 500;
     transition: color 0.3s ease;
+    font-size: 0.95rem;
 }
 
 .nav-menu a:hover {
@@ -122,6 +127,7 @@ body {
     font-weight: 600;
     text-decoration: none;
     display: inline-block;
+    font-size: 0.9rem;
 }
 
 .btn-login:hover {
@@ -141,10 +147,11 @@ body {
     border-radius: 25px;
     padding: 0.25rem;
     backdrop-filter: blur(10px);
+    border: 1px solid var(--gray-light);
 }
 
 .language-btn {
-    padding: 0.5rem 1rem;
+    padding: 0.4rem 0.8rem;
     border: none;
     background: transparent;
     color: var(--text-dark);
@@ -152,11 +159,16 @@ body {
     cursor: pointer;
     transition: all 0.3s ease;
     font-weight: 500;
+    font-size: 0.8rem;
 }
 
 .language-btn.active {
     background: var(--gradient);
     color: white;
+}
+
+.language-btn:hover {
+    background: rgba(8, 18, 244, 0.1);
 }
 
 .hamburger {
@@ -179,7 +191,7 @@ body {
    ============================================= */
 
 .hero {
-    padding: 120px 0 80px;
+    padding: 100px 0 60px;
     background: var(--gradient);
     color: var(--white);
     min-height: 100vh;
@@ -213,14 +225,14 @@ body {
 }
 
 .hero-content h1 {
-    font-size: 3.5rem;
+    font-size: 3rem;
     font-weight: 700;
     margin-bottom: 1.5rem;
     line-height: 1.2;
 }
 
 .hero-content p {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     margin-bottom: 2rem;
     opacity: 0.9;
 }
@@ -231,13 +243,12 @@ body {
     flex-wrap: wrap;
 }
 
-/* ========== BOTÕES PRINCIPAIS ========== */
 .btn-primary,
 .btn-secondary {
-    padding: 1rem 2rem;
+    padding: 0.8rem 1.8rem;
     border: none;
     border-radius: 50px;
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -254,7 +265,7 @@ body {
 .btn-primary:hover {
     background: transparent;
     color: var(--white);
-    transform: translateY(-3px);
+    transform: translateY(-2px);
     box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
 }
 
@@ -267,7 +278,7 @@ body {
 .btn-secondary:hover {
     background: var(--white);
     color: var(--primary-color);
-    transform: translateY(-3px);
+    transform: translateY(-2px);
 }
 
 /* =============================================
@@ -283,18 +294,11 @@ body {
 
 .artist-card {
     position: relative;
-    border-radius: 20px;
+    border-radius: 15px;
     overflow: hidden;
-    min-height: 200px;
+    min-height: 180px;
     transition: all 0.3s ease;
-    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-    background-size: 200% 100%;
-    animation: loading 1.5s infinite;
-}
-
-.artist-card.loaded {
-    background: none;
-    animation: none;
+    background: var(--gray-light);
 }
 
 .artist-card img {
@@ -310,7 +314,7 @@ body {
     left: 0;
     right: 0;
     background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
-    padding: 2rem 1.5rem 1.5rem;
+    padding: 1.5rem 1rem 1rem;
     color: white;
     transform: translateY(10px);
     opacity: 0;
@@ -327,24 +331,24 @@ body {
 }
 
 .artist-info h3 {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     margin-bottom: 0.5rem;
     font-weight: 600;
 }
 
 .artist-info p {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     opacity: 0.9;
 }
 
 #ariana {
     grid-column: 1 / 3;
-    min-height: 250px;
+    min-height: 220px;
 }
 
 #sabrina,
 #nessa {
-    min-height: 180px;
+    min-height: 150px;
 }
 
 /* =============================================
@@ -694,7 +698,7 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    padding: 100px 20px 50px;
+    padding: 80px 20px 50px;
 }
 
 .login-container {
@@ -1017,4 +1021,132 @@ body {
     outline: none;
     border-color: var(--primary-color);
     box-shadow: 0 0 0 3px rgba(8, 18, 244, 0.1);
+}
+
+/* =============================================
+   RESPONSIVIDADE BÁSICA
+   ============================================= */
+
+@media (max-width: 768px) {
+    .header {
+        padding: 0.3rem 0;
+    }
+
+    .nav-container {
+        height: 50px;
+        padding: 0 15px;
+    }
+
+    .logo {
+        font-size: 1.1rem;
+    }
+
+    .logo i {
+        font-size: 1.3rem;
+    }
+
+    .hero {
+        padding: 80px 0 40px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .nav-menu {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .hero-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 3rem;
+    }
+
+    .artist-showcase {
+        grid-template-columns: 1fr;
+    }
+
+    #ariana {
+        grid-column: 1;
+    }
+
+    .login-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .login-card {
+        padding: 2rem;
+    }
+}
+
+/* =============================================
+   UTILITÁRIOS
+   ============================================= */
+
+.text-center {
+    text-align: center;
+}
+
+.mb-1 {
+    margin-bottom: 1rem;
+}
+
+.mb-2 {
+    margin-bottom: 2rem;
+}
+
+.mb-3 {
+    margin-bottom: 3rem;
+}
+
+.mt-1 {
+    margin-top: 1rem;
+}
+
+.mt-2 {
+    margin-top: 2rem;
+}
+
+.mt-3 {
+    margin-top: 3rem;
+}
+
+.p-1 {
+    padding: 1rem;
+}
+
+.p-2 {
+    padding: 2rem;
+}
+
+.p-3 {
+    padding: 3rem;
+}
+
+/* =============================================
+   SCROLL SMOOTH
+   ============================================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* =============================================
+   SELECTION STYLES
+   ============================================= */
+
+::selection {
+    background: var(--primary-color);
+    color: white;
+}
+
+::-moz-selection {
+    background: var(--primary-color);
+    color: white;
 }

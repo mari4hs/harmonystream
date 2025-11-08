@@ -4,12 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - HarmonyStream</title>
-
-    <!-- Favicon -->
+    <title data-i18n="login.title">Login - HarmonyStream</title>
     <link rel="icon" type="image/png" href="faviconh.PNG">
-
-    <!-- Estilos -->
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/responsive.css">
     <link rel="stylesheet" href="styles/animations.css">
@@ -45,7 +41,8 @@
                 <div class="nav-actions">
                     <div class="language-switcher">
                         <button class="language-btn active" data-lang="pt-BR">PT</button>
-                        <button class="language-btn" data-lang="en">EN</button>
+                        <button class="language-btn" data-lang="en-US">EN</button>
+                        <button class="language-btn" data-lang="es-ES">ES</button>
                     </div>
                 </div>
             </div>
@@ -61,19 +58,19 @@
                         <i class="fas fa-music"></i>
                         <h2>HarmonyStream</h2>
                     </div>
-                    <h1 data-translate="login.title">Entre na sua conta</h1>
-                    <p data-translate="login.subtitle">Continue sua jornada musical</p>
+                    <h1 data-i18n="login.title">Entre na sua conta</h1>
+                    <p data-i18n="login.subtitle">Continue sua jornada musical</p>
                 </div>
 
                 <form class="login-form">
                     <div class="form-group">
-                        <label for="email" data-translate="login.email">E-mail ou nome de usuário</label>
+                        <label for="email" data-i18n="login.email">E-mail ou nome de usuário</label>
                         <input type="text" id="email" required>
                         <i class="fas fa-envelope input-icon"></i>
                     </div>
 
                     <div class="form-group">
-                        <label for="password" data-translate="login.password">Senha</label>
+                        <label for="password" data-i18n="login.password">Senha</label>
                         <input type="password" id="password" required>
                         <i class="fas fa-lock input-icon"></i>
                         <button type="button" class="toggle-password">
@@ -85,37 +82,37 @@
                         <label class="checkbox-container">
                             <input type="checkbox" id="remember">
                             <span class="checkmark"></span>
-                            <span data-translate="login.remember">Lembrar de mim</span>
+                            <span data-i18n="login.remember">Lembrar de mim</span>
                         </label>
-                        <a href="#" class="forgot-password" data-translate="login.forgot">Esqueceu a senha?</a>
+                        <a href="#" class="forgot-password" data-i18n="login.forgot">Esqueceu a senha?</a>
                     </div>
 
-                    <button type="submit" class="btn-login-submit" data-translate="login.button">
-                        <span class="btn-text">Entrar</span>
+                    <button type="submit" class="btn-login-submit">
+                        <span class="btn-text" data-i18n="login.button">Entrar</span>
                         <div class="btn-loading">
                             <i class="fas fa-spinner fa-spin"></i>
                         </div>
                     </button>
 
                     <div class="login-divider">
-                        <span data-translate="login.or">ou</span>
+                        <span data-i18n="login.or">ou</span>
                     </div>
 
                     <div class="social-login">
                         <button type="button" class="btn-social google">
                             <i class="fab fa-google"></i>
-                            <span data-translate="login.google">Continuar com Google</span>
+                            <span data-i18n="login.google">Continuar com Google</span>
                         </button>
                         <button type="button" class="btn-social apple">
                             <i class="fab fa-apple"></i>
-                            <span data-translate="login.apple">Continuar com Apple</span>
+                            <span data-i18n="login.apple">Continuar com Apple</span>
                         </button>
                     </div>
                 </form>
 
                 <div class="login-footer">
-                    <p data-translate="login.noAccount">Não tem uma conta?</p>
-                    <a href="#" class="signup-link" data-translate="login.signup">Inscrever-se no HarmonyStream</a>
+                    <p data-i18n="login.noAccount">Não tem uma conta?</p>
+                    <a href="#" class="signup-link" data-i18n="login.signup">Inscrever-se no HarmonyStream</a>
                 </div>
             </div>
 
@@ -124,22 +121,28 @@
                     <div class="feature-icon">
                         <i class="fas fa-headphones"></i>
                     </div>
-                    <h3 data-translate="login.feature1.title">Milhões de músicas</h3>
-                    <p data-translate="login.feature1.description">Acesso ilimitado ao maior catálogo de música</p>
+                    <div class="feature-content">
+                        <h3 data-i18n="login.feature1.title">Milhões de músicas</h3>
+                        <p data-i18n="login.feature1.description">Acesso ilimitado ao maior catálogo de música</p>
+                    </div>
                 </div>
                 <div class="feature-highlight">
                     <div class="feature-icon">
                         <i class="fas fa-mobile-alt"></i>
                     </div>
-                    <h3 data-translate="login.feature2.title">Ouça em qualquer lugar</h3>
-                    <p data-translate="login.feature2.description">Disponível em todos os seus dispositivos</p>
+                    <div class="feature-content">
+                        <h3 data-i18n="login.feature2.title">Ouça em qualquer lugar</h3>
+                        <p data-i18n="login.feature2.description">Disponível em todos os seus dispositivos</p>
+                    </div>
                 </div>
                 <div class="feature-highlight">
                     <div class="feature-icon">
                         <i class="fas fa-download"></i>
                     </div>
-                    <h3 data-translate="login.feature3.title">Modo offline</h3>
-                    <p data-translate="login.feature3.description">Baixe suas músicas favoritas</p>
+                    <div class="feature-content">
+                        <h3 data-i18n="login.feature3.title">Modo offline</h3>
+                        <p data-i18n="login.feature3.description">Baixe suas músicas favoritas</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -185,8 +188,9 @@
                         btnLoading.style.display = 'none';
                         submitBtn.disabled = false;
 
-                        // Show success message (in a real app, you'd redirect)
+                        // Show success message
                         alert('Login realizado com sucesso! Redirecionando...');
+                        window.location.href = 'index.html';
                     }, 2000);
                 });
             }
