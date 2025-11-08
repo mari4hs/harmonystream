@@ -6,9 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-i18n="login.title">Login - HarmonyStream</title>
     <link rel="icon" type="image/png" href="faviconh.PNG">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/responsive.css">
     <link rel="stylesheet" href="styles/animations.css">
+
+    <!-- Fontes -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -49,11 +53,12 @@
         </nav>
     </header>
 
-    <!-- Login Section -->
-    <section class="login-section">
-        <div class="login-container">
-            <div class="login-card fade-in-up">
-                <div class="login-header">
+    <!-- Hero Section do Login -->
+    <section class="login-hero">
+        <div class="login-hero-container">
+            <!-- Card de Login -->
+            <div class="login-main-card fade-in-up">
+                <div class="login-card-header">
                     <div class="login-logo">
                         <i class="fas fa-music"></i>
                         <h2>HarmonyStream</h2>
@@ -64,18 +69,22 @@
 
                 <form class="login-form">
                     <div class="form-group">
-                        <label for="email" data-i18n="login.email">E-mail ou nome de usuário</label>
-                        <input type="text" id="email" required>
-                        <i class="fas fa-envelope input-icon"></i>
+                        <div class="input-container">
+                            <i class="fas fa-envelope input-icon"></i>
+                            <input type="text" id="email" placeholder=" " required>
+                            <label for="email" data-i18n="login.email">E-mail ou nome de usuário</label>
+                        </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="password" data-i18n="login.password">Senha</label>
-                        <input type="password" id="password" required>
-                        <i class="fas fa-lock input-icon"></i>
-                        <button type="button" class="toggle-password">
-                            <i class="fas fa-eye"></i>
-                        </button>
+                        <div class="input-container">
+                            <i class="fas fa-lock input-icon"></i>
+                            <input type="password" id="password" placeholder=" " required>
+                            <label for="password" data-i18n="login.password">Senha</label>
+                            <button type="button" class="toggle-password">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
                     </div>
 
                     <div class="form-options">
@@ -111,36 +120,43 @@
                 </form>
 
                 <div class="login-footer">
-                    <p data-i18n="login.noAccount">Não tem uma conta?</p>
-                    <a href="#" class="signup-link" data-i18n="login.signup">Inscrever-se no HarmonyStream</a>
+                    <p data-i18n="login.noAccount">Não tem uma conta? <a href="#" class="signup-link"
+                            data-i18n="login.signup">Inscrever-se no HarmonyStream</a></p>
                 </div>
             </div>
 
+            <!-- Destaques (igual página inicial) -->
             <div class="login-features fade-in-right">
-                <div class="feature-highlight">
+                <div class="features-header">
+                    <h3>Por que escolher o HarmonyStream?</h3>
+                </div>
+
+                <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-headphones"></i>
                     </div>
                     <div class="feature-content">
-                        <h3 data-i18n="login.feature1.title">Milhões de músicas</h3>
+                        <h4 data-i18n="login.feature1.title">Milhões de músicas</h4>
                         <p data-i18n="login.feature1.description">Acesso ilimitado ao maior catálogo de música</p>
                     </div>
                 </div>
-                <div class="feature-highlight">
+
+                <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-mobile-alt"></i>
                     </div>
                     <div class="feature-content">
-                        <h3 data-i18n="login.feature2.title">Ouça em qualquer lugar</h3>
+                        <h4 data-i18n="login.feature2.title">Ouça em qualquer lugar</h4>
                         <p data-i18n="login.feature2.description">Disponível em todos os seus dispositivos</p>
                     </div>
                 </div>
-                <div class="feature-highlight">
+
+                <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-download"></i>
                     </div>
                     <div class="feature-content">
-                        <h3 data-i18n="login.feature3.title">Modo offline</h3>
+                        <h4 data-i18n="login.feature3.title">Modo offline</h4>
                         <p data-i18n="login.feature3.description">Baixe suas músicas favoritas</p>
                     </div>
                 </div>
@@ -148,11 +164,26 @@
         </div>
     </section>
 
-    <script src="scripts/language.js"></script>
-    <script src="scripts/animations.js"></script>
+    <!-- JavaScript -->
+    <script src="scripts/main.js"></script>
+    <script src="scripts/translation.js"></script>
+    <script src="scripts/image-system.js"></script>
+
     <script>
         // Login specific functionality
         document.addEventListener('DOMContentLoaded', function () {
+            // Remove loading screen immediately for login page
+            const loadingScreen = document.querySelector('.loading-screen');
+            if (loadingScreen) {
+                loadingScreen.classList.add('loaded');
+                setTimeout(() => {
+                    if (loadingScreen.parentNode) {
+                        loadingScreen.remove();
+                    }
+                    console.log('✅ Tela de loading removida - Login');
+                }, 500);
+            }
+
             // Toggle password visibility
             const togglePassword = document.querySelector('.toggle-password');
             const passwordInput = document.getElementById('password');
@@ -194,6 +225,40 @@
                     }, 2000);
                 });
             }
+
+            // Floating labels functionality
+            const inputs = document.querySelectorAll('.input-container input');
+            inputs.forEach(input => {
+                input.addEventListener('focus', function () {
+                    this.parentElement.classList.add('focused');
+                });
+
+                input.addEventListener('blur', function () {
+                    if (!this.value) {
+                        this.parentElement.classList.remove('focused');
+                    }
+                });
+
+                // Check on page load
+                if (input.value) {
+                    input.parentElement.classList.add('focused');
+                }
+            });
+        });
+
+        // Fallback - garante que o loading some mesmo se houver erro
+        window.addEventListener('load', function () {
+            setTimeout(function () {
+                const loadingScreen = document.querySelector('.loading-screen');
+                if (loadingScreen && !loadingScreen.classList.contains('loaded')) {
+                    loadingScreen.classList.add('loaded');
+                    setTimeout(function () {
+                        if (loadingScreen.parentNode) {
+                            loadingScreen.remove();
+                        }
+                    }, 500);
+                }
+            }, 3000); // Máximo 3 segundos
         });
     </script>
 </body>

@@ -4,14 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-i18n="nav.home">HarmonyStream - Sua Música, Sua Emoção</title>
-    <link rel="icon" type="image/png" href="faviconh.PNG">
+    <title>HarmonyStream - Sua Música, Sua Emoção</title>
+    <meta name="description"
+        content="Streaming musical com os melhores artistas pop. Milhões de músicas, zero anúncios.">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/responsive.css">
     <link rel="stylesheet" href="styles/animations.css">
+
+    <!-- Fontes -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="faviconh.PNG">
 </head>
 
 <body>
@@ -32,29 +40,37 @@
     <header class="header">
         <nav class="navbar">
             <div class="nav-container">
+                <!-- Logo -->
                 <div class="logo">
                     <a href="#home">
                         <i class="fas fa-music"></i>
                         <span>HarmonyStream</span>
                     </a>
                 </div>
+
+                <!-- Menu Principal -->
                 <ul class="nav-menu">
                     <li><a href="#home" data-i18n="nav.home">Início</a></li>
                     <li><a href="#artists" data-i18n="nav.artists">Artistas</a></li>
                     <li><a href="#plans" data-i18n="nav.plans">Planos</a></li>
                     <li><a href="login.html" class="btn-login" data-i18n="nav.login">Entrar</a></li>
                 </ul>
+
+                <!-- Ações do Header -->
                 <div class="nav-actions">
+                    <!-- Seletor de Idiomas -->
                     <div class="language-switcher">
                         <button class="language-btn active" data-lang="pt-BR">PT</button>
                         <button class="language-btn" data-lang="en-US">EN</button>
                         <button class="language-btn" data-lang="es-ES">ES</button>
                     </div>
-                    <div class="hamburger">
+
+                    <!-- Menu Hamburguer (Mobile) -->
+                    <button class="hamburger" aria-label="Menu mobile">
                         <span></span>
                         <span></span>
                         <span></span>
-                    </div>
+                    </button>
                 </div>
             </div>
         </nav>
@@ -63,6 +79,7 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-container">
+            <!-- Conteúdo de Texto -->
             <div class="hero-content">
                 <h1 class="fade-in-up" data-i18n="hero.title">Ouça suas artistas pop favoritas sem limites</h1>
                 <p class="fade-in-up delay-1" data-i18n="hero.subtitle">Milhões de músicas. Zero anúncios. A experiência
@@ -72,31 +89,53 @@
                     <button class="btn-secondary" id="btn-see-plans" data-i18n="hero.plans">Ver planos</button>
                 </div>
             </div>
+
+            <!-- Showcase de Artistas - NOVO LAYOUT -->
             <div class="hero-image">
-                <div class="artist-showcase">
-                    <div class="artist-card fade-in-right" id="ariana">
-                        <img src="assets/images/ariana-grande.jpg" alt="Ariana Grande" loading="lazy">
-                        <div class="artist-overlay">
-                            <div class="artist-info">
-                                <h3 data-i18n="artists.ariana.name">Ariana Grande</h3>
-                                <p data-i18n="artists.ariana.songs">Positions • 7 rings • thank u, next</p>
+                <div class="artists-pyramid-layout">
+                    <!-- Ariana Grande (Destaque Grande) -->
+                    <div class="artist-main fade-in-right">
+                        <div class="artist-image large">
+                            <img src="assets/images/ariana-grande.jpg" alt="Ariana Grande" loading="lazy">
+                            <div class="play-overlay">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <div class="artist-info">
+                            <h3 data-i18n="artists.ariana.name">Ariana Grande</h3>
+                            <p data-i18n="artists.ariana.songs">Positions • 7 rings • thank u, next</p>
+                            <div class="artist-stats">
+                                <span data-i18n="artists.ariana.listeners">85,4M ouvintes mensais</span>
                             </div>
                         </div>
                     </div>
-                    <div class="artist-card fade-in-up delay-1" id="sabrina">
-                        <img src="assets/images/sabrina-carpenter.jpg" alt="Sabrina Carpenter" loading="lazy">
-                        <div class="artist-overlay">
+
+                    <!-- Artistas Secundários -->
+                    <div class="artist-secondary-container">
+                        <!-- Sabrina Carpenter -->
+                        <div class="artist-secondary fade-in-up delay-1">
+                            <div class="artist-image small">
+                                <img src="assets/images/sabrina-carpenter.jpg" alt="Sabrina Carpenter" loading="lazy">
+                                <div class="play-overlay">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                            </div>
                             <div class="artist-info">
-                                <h3 data-i18n="artists.sabrina.name">Sabrina Carpenter</h3>
+                                <h4 data-i18n="artists.sabrina.name">Sabrina Carpenter</h4>
                                 <p data-i18n="artists.sabrina.songs">Feather • Nonsense • Espresso</p>
                             </div>
                         </div>
-                    </div>
-                    <div class="artist-card fade-in-up delay-2" id="nessa">
-                        <img src="assets/images/nessa-barrett.jpg" alt="Nessa Barrett" loading="lazy">
-                        <div class="artist-overlay">
+
+                        <!-- Nessa Barrett -->
+                        <div class="artist-secondary fade-in-up delay-2">
+                            <div class="artist-image small">
+                                <img src="assets/images/nessa-barrett.jpg" alt="Nessa Barrett" loading="lazy">
+                                <div class="play-overlay">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                            </div>
                             <div class="artist-info">
-                                <h3 data-i18n="artists.nessa.name">Nessa Barrett</h3>
+                                <h4 data-i18n="artists.nessa.name">Nessa Barrett</h4>
                                 <p data-i18n="artists.nessa.songs">die first • madhouse • american jesus</p>
                             </div>
                         </div>
@@ -106,13 +145,15 @@
         </div>
     </section>
 
-    <!-- Artists Section -->
+    <!-- Seção Artistas -->
     <section id="artists" class="artists">
         <div class="container">
             <h2 class="section-title fade-in-up" data-i18n="artists.title">Artistas em Destaque</h2>
             <p class="section-subtitle fade-in-up delay-1" data-i18n="artists.subtitle">Descubra os artistas que estão
                 dominando as paradas</p>
+
             <div class="artists-grid">
+                <!-- Artista 1 -->
                 <div class="artist-featured fade-in-up">
                     <div class="artist-img">
                         <img src="assets/images/artists/ariana-featured.jpg" alt="Ariana Grande" loading="lazy">
@@ -127,6 +168,8 @@
                         <span data-i18n="artists.ariana.tags.1">R&B</span>
                     </div>
                 </div>
+
+                <!-- Artista 2 -->
                 <div class="artist-featured fade-in-up delay-1">
                     <div class="artist-img">
                         <img src="assets/images/artists/sabrina-featured.jpg" alt="Sabrina Carpenter" loading="lazy">
@@ -141,6 +184,8 @@
                         <span data-i18n="artists.sabrina.tags.1">Dance</span>
                     </div>
                 </div>
+
+                <!-- Artista 3 -->
                 <div class="artist-featured fade-in-up delay-2">
                     <div class="artist-img">
                         <img src="assets/images/artists/nessa-featured.jpg" alt="Nessa Barrett" loading="lazy">
@@ -155,6 +200,8 @@
                         <span data-i18n="artists.nessa.tags.1">Emo</span>
                     </div>
                 </div>
+
+                <!-- Artista 4 -->
                 <div class="artist-featured fade-in-up delay-3">
                     <div class="artist-img">
                         <img src="assets/images/artists/taylor-featured.jpg" alt="Taylor Swift" loading="lazy">
@@ -173,13 +220,15 @@
         </div>
     </section>
 
-    <!-- Plans Section -->
+    <!-- Seção Planos -->
     <section id="plans" class="plans">
         <div class="container">
             <h2 class="section-title fade-in-up" data-i18n="plans.title">Escolha seu plano</h2>
             <p class="section-subtitle fade-in-up delay-1" data-i18n="plans.subtitle">Experimente grátis por 30 dias.
                 Cancele quando quiser.</p>
+
             <div class="plans-grid">
+                <!-- Plano Básico -->
                 <div class="plan-card fade-in-up">
                     <div class="plan-header">
                         <h3 data-i18n="plans.basic.name">Básico</h3>
@@ -201,6 +250,8 @@
                     </ul>
                     <button class="btn-plan" data-i18n="plans.start">Começar</button>
                 </div>
+
+                <!-- Plano Premium (Mais Popular) -->
                 <div class="plan-card popular fade-in-up delay-1">
                     <div class="popular-badge" data-i18n="plans.badge">Mais Popular</div>
                     <div class="plan-header">
@@ -224,6 +275,8 @@
                     </ul>
                     <button class="btn-plan primary" data-i18n="plans.trial">Experimente grátis</button>
                 </div>
+
+                <!-- Plano Familiar -->
                 <div class="plan-card fade-in-up delay-2">
                     <div class="plan-header">
                         <h3 data-i18n="plans.family.name">Familiar</h3>
@@ -250,18 +303,19 @@
         </div>
     </section>
 
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-simple">
-                <p>&copy; 2025 Mariah Santos</p>
+                <p>&copy; 2025 Mariah Santos.</p>
             </div>
         </div>
     </footer>
 
-    <script src="scripts/image-fallback.js"></script>
-    <script src="scripts/language.js"></script>
-    <script src="scripts/animations.js"></script>
-    <script src="scripts/script.js"></script>
+    <!-- JavaScript -->
+    <script src="scripts/image-system.js"></script>
+    <script src="scripts/translation.js"></script>
+    <script src="scripts/main.js"></script>
 </body>
 
 </html>
