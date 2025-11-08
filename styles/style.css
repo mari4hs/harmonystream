@@ -1150,3 +1150,117 @@ html {
     background: var(--primary-color);
     color: white;
 }
+
+/* =============================================
+   PARA MOBILE - HAMBURGUER E IDIOMAS
+   ============================================= */
+
+@media (max-width: 768px) {
+
+    /* ========== GARANTIR QUE HAMBURGUER APARECE ========== */
+    .hamburger {
+        display: flex !important;
+        flex-direction: column;
+        cursor: pointer;
+        padding: 8px;
+        z-index: 1001;
+        background: transparent;
+        border: none;
+    }
+
+    .hamburger span {
+        width: 25px;
+        height: 3px;
+        background: var(--text-dark);
+        margin: 3px 0;
+        transition: 0.3s;
+        border-radius: 2px;
+        display: block !important;
+    }
+
+    /* ========== GARANTIR QUE MENU FICA ESCONDIDO ========== */
+    .nav-menu {
+        display: flex !important;
+        position: fixed;
+        left: -100%;
+        top: 60px;
+        flex-direction: column;
+        background: var(--white);
+        width: 100%;
+        height: calc(100vh - 60px);
+        text-align: center;
+        transition: 0.3s ease-in-out;
+        box-shadow: var(--shadow);
+        padding: 2rem 0;
+        gap: 0;
+        z-index: 998;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    /* ========== MOSTRAR SWITCHER DE IDIOMAS NO MOBILE ========== */
+    .language-switcher {
+        display: flex !important;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 25px;
+        padding: 0.25rem;
+        backdrop-filter: blur(10px);
+        border: 1px solid var(--gray-light);
+        margin-right: 10px;
+    }
+
+    .language-btn {
+        padding: 0.4rem 0.8rem;
+        border: none;
+        background: transparent;
+        color: var(--text-dark);
+        border-radius: 20px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-weight: 500;
+        font-size: 0.8rem;
+        display: block !important;
+    }
+
+    .language-btn.active {
+        background: var(--gradient);
+        color: white;
+    }
+
+    /* ========== AJUSTES NO HEADER MOBILE ========== */
+    .nav-actions {
+        display: flex !important;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    /* ========== ESCONDER MENU NORMAL NO MOBILE ========== */
+    .nav-menu:not(.active) {
+        display: none !important;
+    }
+}
+
+/* =============================================
+   CORREÇÃO PARA TELAS MUITO PEQUENAS
+   ============================================= */
+@media (max-width: 480px) {
+    .language-switcher {
+        display: flex !important;
+    }
+
+    .language-btn {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.75rem;
+    }
+
+    .hamburger {
+        padding: 6px;
+    }
+
+    .hamburger span {
+        width: 22px;
+        height: 2px;
+    }
+}

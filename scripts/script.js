@@ -69,13 +69,43 @@ function setupAllButtons() {
 function setupMobileMenu() {
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
+    const body = document.body;
 
     if (hamburger && navMenu) {
+        console.log('🔧 Configurando menu mobile...');
+
         hamburger.addEventListener('click', function () {
+            console.log('🎵 Hamburger clicado!');
             hamburger.classList.toggle('active');
             navMenu.classList.toggle('active');
+            body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
         });
+
+        // Fechar menu ao clicar nos links
+        const navLinks = document.querySelectorAll('.nav-menu a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                console.log('🎵 Link clicado, fechando menu...');
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                body.style.overflow = '';
+            });
+        });
+
+        // Fechar menu ao redimensionar a janela
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                body.style.overflow = '';
+            }
+        });
+
         console.log('✅ Menu mobile configurado');
+    } else {
+        console.log('❌ Elementos do menu mobile não encontrados');
+        console.log('Hamburger:', hamburger);
+        console.log('Nav Menu:', navMenu);
     }
 }
 
