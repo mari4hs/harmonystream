@@ -61,7 +61,8 @@ HARMONYSTREAM/
 👩‍💻 Desenvolvedora: Mariah Santos
 📧 Email: [mariahsantosdev@gmail.com]
 🔗 GitHub: github.com/mari4hs
-🌐 Portfólio: mari4hs.github.io
+🌐 Portfólio: [mari4hs.github.io](https://mari4hs.github.io/portfolio-mariah-santos/)
 
 
 ### Desenvolvido por: [https://github.com/mari4hs](https://github.com/mari4hs) ✨
+
